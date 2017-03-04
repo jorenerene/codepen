@@ -1,0 +1,89 @@
+<!DOCTYPE html><html><head>
+<title>Bootstrap Modal on Page Load</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet prefetch' href='http://bootswatch.com/cosmo/bootstrap.min.css'>
+<link rel="stylesheet" href="css.css">
+</head><body>
+
+<div>
+
+<!-- Nav tabs -->
+<ul class="nav nav-pills nav-justified text-uppercase" role="tablist">
+<li role="presentation" class="active"><a href="#tab-description" aria-controls="tab-description" role="tab" data-toggle="tab">Description</a></li>
+<li role="presentation"><a href="#tab-inspiration" aria-controls="tab-inspiration" role="tab" data-toggle="tab">Inspiration</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="tab-description">
+<div class="container">
+<div class="row">
+<div class="col-sm-8 col-sm-offset-2">
+<div class="page-header">
+<h1>When you’re the one who coded an on page load modal asking for an email and you have to take a long look at yourself</h1>
+</div>
+<img src="https://pbs.twimg.com/media/Cmxl9_SUIAAeIr8.jpg" class="width-100 img-responsive  center-block">
+
+<br>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modal-subscribe">
+Launch Modal
+</button>
+
+</div>
+</div>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane" id="tab-inspiration">
+<div class="container">
+<div class="row">
+<div class="col-sm-8 col-sm-offset-2">
+<div class="page-header">
+<p class="lead">Based on <a href="https://twitter.com/iamdevloper/status/751087355776282624" target="_blank">this tweet from @iamdevloper</a> and the National Geographic on page load modal. I liked the design simplicity and marketing copy enough to duplicate in <a href="https://www.getbootstrap.com" target="_blank">Bootstrap</a>.</p>
+</div>
+<br>
+<img src="https://68.media.tumblr.com/013b065e1e48e2d84b78b8dd10ec5b69/tumblr_ojtqy5FfFz1qjqi9so1_540.png" class="img-responsive">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Subscribe Modal -->
+<div class="modal fade" id="modal-subscribe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header border-0">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="myModalLabel"></h4>
+</div>
+<div class="modal-body">
+<h1 class="text-center text-uppercase">Keep Up With The World</h1>
+<div class="row">
+<div class="col-sm-10 col-sm-offset-1">
+<p class="text-center">Sign up below to get captivating new stories, videos, and photos delivered to your email for free, plus special offers.</p>
+<br>
+<div class="form-group center-block">
+<div class="input-group">
+<input class="input-lg form-control" placeholder="Email Address">
+<span class="input-group-btn"><a class="btn btn-primary btn-lg">Sign Up</a></span>
+</div>
+</div>
+
+<br>
+<p class="text-muted small text-center">We will never share your e-mail address unless you allow us to do so.<br>View our <a href="#">Privacy Policy</a>. Easy unsubscribe links are provided in every email.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+<script src="js.js"></script>
+
+</body></html>
