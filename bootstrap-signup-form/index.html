@@ -1,0 +1,65 @@
+<!DOCTYPE html><html class='html-style'><head>
+<title>Bootstrap Signup Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet prefetch' href='http://bootswatch.com/paper/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700'>
+<link rel="stylesheet" href="css.css">
+</head><body>
+
+<div class="container mt-25vh">
+<div class="row">
+<div class="col-sm-6 col-sm-offset-3">
+<div class="jumbotron">
+<p class="lead">Bootstrap assist based on <a href="https://dribbble.com/shots/3215607--32-Sign-up-Form-sketch" target="_blank">Luka Dadiani's rebound</a> of <a href="https://dribbble.com/shots/2290678-Daily-UI-Day-1-Sign-Up" target="_blank">Matt Rossi's dribbble</a>.</p>
+<hr>
+<a data-toggle="modal" data-target="#sign-modal" class="btn btn-block btn-success">Sign Up</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="sign-modal">
+<div class="modal-dialog modal-perspective modal-sm">
+<div class="modal-content modal-style">
+<div class="modal-header text-white border-0">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="text-white" aria-hidden="true">&times;</span></button>
+<h6 class="text-white">Create Your Account</h6>
+</div>
+<div class="modal-body pt-0 pb-0">
+<form class="form-style">
+<div class="form-group has-success">
+<label class="text-uppercase control-label">Full Name</label>
+<input class="form-control" placeholder="Enter your full name here">
+</div>
+<div class="form-group has-success">
+<label class="text-uppercase control-label">Email</label>
+<input type="email" class="form-control" placeholder="Your personal email here">
+</div>
+<div class="form-group has-success">
+<label class="text-uppercase control-label">Password</label>
+<input type="password" class="form-control" placeholder="Your 8-character mixed-case password">
+</div>
+<div class="form-group has-success">
+<label class="text-uppercase control-label">Repeat Password</label>
+<input type="password" class="form-control" placeholder="Confirm what you typed above">
+</div>
+<div class="checkbox">
+<label class="font-11px text-muted">
+<input type="checkbox">Agree to the terms and conditions</label>
+</div>
+</form>
+</div>
+<div class="modal-footer border-0">
+<a data-dismiss="modal" data-target="#sign-modal" class="text-white btn btn-link">Cancel</a>
+<a class="btn btn-success">Sign Up</a>
+</div>
+</div>
+</div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+<script src="js.js"></script>
+
+</body></html>
