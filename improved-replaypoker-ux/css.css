@@ -1,0 +1,48 @@
+.mt--50 {
+  margin-top:-40px;
+}
+
+.mt-20 {
+  margin-top:20px;
+}
+
+.mt-10vh {
+  margin-top:10vh;
+}
+
+.mb-50 {
+  margin-bottom:50px;
+}
+
+.btn-facebook {
+  background:#3b5998;
+  color:white;
+}
+
+body, html {
+  background-image:url('https://68.media.tumblr.com/51294797dfd8df08a398f50ee4cc5a3a/tumblr_omkgxeBzfm1qjqi9so1_540.png');
+}
+
+.pen .well {
+  background:url('http://replaypoker-staging.storage.googleapis.com/assets/layout/background-wooden-3df12926a2ade5a04046e046e3aea692367afa2de356b177f4ac7333237d2286.png');
+  background:radial-gradient(circle, rgb(82, 155, 69), rgb(25, 64, 18));
+  padding-left:40px;
+  padding-right:40px;
+  padding-bottom:30px;
+}
+
+.p-0 {
+  padding:0;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight:bold;
+}
+
+.pen .form-control {
+  background:#4e5d6c;
+}
+
+a, [data-target] {
+  cursor:pointer;
+}

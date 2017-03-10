@@ -1,0 +1,166 @@
+<!DOCTYPE html><html class='pen'><head>
+<title>Improved Replay Poker UX</title>
+<meta charset='UTF-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css'>
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="css.css">
+</head><body>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-before" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title"><span class="fa fa-fw fa-info"></span></h4>
+</div>
+<div class="modal-body p-0">
+<img src="https://68.media.tumblr.com/8f6b51718fd0464e56250d757f8e909f/tumblr_omkgxeBzfm1qjqi9so2_1280.png" class="img-responsive">
+</div>
+<div class="modal-footer">
+<p class="text-left">I play No Limit Texas Hold'em at <a href="http://www.replaypoker.com" target="_blank">replaypoker.com</a> in Incognito Mode; because I don't remain logged in, I shouldn't have to endure an extra page load to start playing. Problem solved.</p>
+<p class="text-left">This pen also addresses the splash page background image which alienates women and people of color. I included language country flags to further embrace diversity.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+<select class="selectpicker">
+<option data-icon="flag-icon flag-icon-cn" value="zh">Chinese - 汉语</option>
+<option data-icon="flag-icon flag-icon-cz" value="cs">Czech - Čeština</option>
+<option data-icon="flag-icon flag-icon-dk" value="da">Danish - Dansk</option>
+<option data-icon="flag-icon flag-icon-nl" value="nl">Dutch - Nederlands</option>
+<option data-icon="flag-icon flag-icon-us" value="en" selected="selected">English</option>
+<option data-icon="flag-icon flag-icon-fi" value="fi">Finnish - Suomalainen</option>
+<option data-icon="flag-icon flag-icon-fr" value="fr">French - Français</option>
+<option data-icon="flag-icon flag-icon-de" value="de">German - Deutsch</option>
+<option data-icon="flag-icon flag-icon-gr" value="el">Greek - Ελληνικά</option>
+<option data-icon="flag-icon flag-icon-hu" value="hu">Hungarian - Magyar</option>
+<option data-icon="flag-icon flag-icon-it" value="it">Italian - italiano</option>
+<option data-icon="flag-icon flag-icon-jp" value="ja">Japanese - 日本語</option>
+<option data-icon="flag-icon flag-icon-pt" value="pt">Portuguese - Português</option>
+<option data-icon="flag-icon flag-icon-ro" value="ro">Romanian - Română</option>
+<option data-icon="flag-icon flag-icon-ru" value="ru">Russian - Русский</option>
+<option data-icon="flag-icon flag-icon-es" value="es">Spanish - Español</option>
+<option data-icon="flag-icon flag-icon-se" value="sv">Swedish - Svenska</option>
+</select>
+
+<a data-toggle="modal" data-target="#modal-before" class="btn btn-default pull-right"><span class="fa fa-fw fa-info"></span></a>
+<div class="row">
+<div class="col-sm-6 col-sm-offset-3">
+
+<div class="well mt-10vh">
+<img class="center-block mt--50 mb-50" src="https://replaypoker.storage.googleapis.com/assets/replaypoker-300db2fe1a789a930f3eb9b4d2798e618989eb4d621a9bc9c16b34b81512df37.png">
+
+<div class="form-group">
+<ul class="nav nav-pills text-uppercase small nav-justified">
+<li role="presentation" class="active"><a data-toggle="tab" data-target="#welcome">Welcome</a></li>
+<li role="presentation"><a data-toggle="tab" data-target="#login">Log In</a></li>
+<li role="presentation"><a data-toggle="tab" data-target="#signup">Sign Up</a></li>
+</ul>
+</div>
+
+<!-- Tab panes -->
+<div class="tab-content">
+
+<div role="tabpanel" class="tab-pane active" id="welcome">
+<div class="media">
+<div class="media-left">
+<span class="mt-20 fa fa-fw fa-thumbs-up fa-3x"></span>
+</div>
+<div class="media-body">
+<h3>Play for Fun Poker</h3>
+<p>Risk free alternative to real money poker</p>
+</div>
+</div>
+
+<div class="media">
+<div class="media-left">
+<span class="mt-20 fa fa-fw fa-clock-o fa-3x"></span>
+</div>
+<div class="media-body">
+<h3>Free to Play</h3>
+<p>Games and tournaments run 24/7</p>
+</div>
+</div>
+
+<div class="media">
+<div class="media-left">
+<span class="mt-20 fa fa-fw fa-laptop fa-3x"></span>
+</div>
+<div class="media-body">
+<h3>No Download Required</h3>
+<p>Just sign up and play!</p>
+</div>
+</div>
+<hr>
+<a class="btn btn-sm text-uppercase btn-primary btn-block" data-toggle="tab" data-target="#signup">Get Started!</a>
+</div>
+
+<div role="tabpanel" class="tab-pane" id="login">
+<a class="btn btn-facebook text-uppercase btn-sm btn-block"><span class="fa fa-fw fa-facebook"></span> | &nbsp; Log in with Facebook</a>
+<hr>
+
+<div class="form-group">
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+<input class="form-control" type="text" placeholder="Username">
+</div>
+</div>
+
+<div class="form-group">
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden="true"></i></span>
+<input class="form-control" type="password" placeholder="Password">
+</div>
+</div>
+
+<a class="btn btn-primary btn-sm text-uppercase">Play!</a>
+
+<a class="small text-warning help-block pull-right">Forgot your password?</a>
+
+</div>
+
+<div role="tabpanel" class="tab-pane" id="signup">
+<a class="btn btn-facebook text-uppercase btn-sm btn-block"><span class="fa fa-fw fa-facebook"></span> | &nbsp; Sign in with Facebook</a>
+<hr>
+
+<div class="form-group">
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i></span>
+<input class="form-control" type="email" placeholder="Email">
+</div>
+</div>
+
+<div class="form-group">
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+<input class="form-control" type="text" placeholder="Username">
+</div>
+</div>
+
+<div class="form-group">
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden="true"></i></span>
+<input class="form-control" type="password" placeholder="Password">
+</div>
+</div>
+
+<a class="btn btn-primary btn-sm text-uppercase">Play!</a>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.js'></script>
+
+</body></html>
