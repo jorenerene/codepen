@@ -2,50 +2,233 @@
 <title>Bootstrap Modal Sidebar Menu</title>
 <meta charset='UTF-8'>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel="icon" href="favicon.ico">
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css'>
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="css.css">
+
+<style>
+/* Social Buttons - Twitter, Facebook, Google Plus */
+.btn-twitter {
+	background: #00acee;
+	color: #fff
+}
+.btn-twitter:link, .btn-twitter:visited {
+	color: #fff
+}
+.btn-twitter:active, .btn-twitter:hover {
+	background: #0087bd;
+	color: #fff
+}
+.btn-facebook {
+	background: #3b5998;
+	color: #fff
+}
+.btn-facebook:link, .btn-facebook:visited {
+	color: #fff
+}
+.btn-facebook:active, .btn-facebook:hover {
+	background: #30477a;
+	color: #fff
+}
+.btn-googleplus {
+	background: #e93f2e;
+	color: #fff
+}
+.btn-googleplus:link, .btn-googleplus:visited {
+	color: #fff
+}
+.btn-googleplus:active, .btn-googleplus:hover {
+	background: #ba3225;
+	color: #fff
+}
+
+/* MODAL FADE LEFT RIGHT BOTTOM */
+.modal.fade:not(.in).left .modal-dialog {
+	-webkit-transform: translate3d(-25%, 0, 0);
+	transform: translate3d(-25%, 0, 0);
+}
+.modal.fade:not(.in).right .modal-dialog {
+	-webkit-transform: translate3d(25%, 0, 0);
+	transform: translate3d(25%, 0, 0);
+}
+.modal.fade:not(.in).bottom .modal-dialog {
+	-webkit-transform: translate3d(0, 25%, 0);
+	transform: translate3d(0, 25%, 0);
+}
+
+.modal.right .modal-dialog {
+	position:absolute;
+	top:0;
+	right:0;
+	margin:0;
+}
+
+.modal.left .modal-dialog {
+	position:absolute;
+	top:0;
+	left:0;
+	margin:0;
+}
+
+.modal.left .modal-content, .modal.right .modal-content {
+	min-height:100vh;
+	border:0;
+}
+</style>
 </head><body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
 <div class="container">
 
-<div class="nav navbar-nav navbar-right">
-<button type="button" data-toggle="modal" data-target="#sidebar-left" class="btn btn-default navbar-btn">Left Sidebar</button>
-</div>
+<button type="button" data-toggle="modal" data-target="#sidebar-right" class="btn btn-primary navbar-btn pull-left">Right Sidebar</button>
 
-<div class="nav navbar-nav navbar-left">
-<button type="button" data-toggle="modal" data-target="#sidebar-right" class="btn btn-default navbar-btn">Right Sidebar</button>
-</div>
+<button type="button" data-toggle="modal" data-target="#sidebar-left" class="btn btn-primary navbar-btn pull-right">Left Sidebar</button>
 
 </div>
 </nav>
 
 <!-- Sidebar Left -->
-<div class="modal fade" id="sidebar-left" tabindex="-1" role="dialog">
-<div class="modal-dialog" role="document">
+<div class="modal fade left" id="sidebar-left" tabindex="-1" role="dialog">
+<div class="modal-dialog modal-sm" role="document">
 <div class="modal-content">
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-<h4 class="modal-title">Modal title</h4>
+<h4 class="modal-title">Left Sidebar</h4>
 </div>
 <div class="modal-body">
-...
+<a href="#home" data-dismiss="modal" class="btn btn-block btn-default btn-lg">Home</a>
+
+<!-- Split button -->
+<div class="btn-group btn-block">
+<a role="button" href="#services" class="text-left btn btn-lg btn-default col-xs-10">Services</a>
+<button type="button" class="btn btn-lg btn-default col-xs-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span class="fa fa-chevron-down"></span>
+<span class="sr-only">Toggle Dropdown</span>
+</button>
+<ul class="dropdown-menu btn-block">
+<li><a href="#design">Design</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="#develop">Develop</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="#support">Support</a></li>
+</ul>
+</div>
+
+<a href="#about" class="btn btn-block btn-default btn-lg">About</a>
+
+<hr>
+
+<div class="form-group">
+<div class="input-group">
+<input class="form-control" placeholder="Search">
+<span class="input-group-btn">
+<button class="btn btn-default" type="button"><i class="fa fa-fw fa-search"></i></button>
+</span>
+</div>
+</div>
+
+<hr>
+
+<div class="btn-group btn-group-justified">
+<a class="btn btn-facebook btn-lg"><i class="fa fa-fw fa-facebook"></i></a>
+<a class="btn btn-twitter btn-lg"><i class="fa fa-fw fa-twitter"></i></a>
+<a class="btn btn-googleplus btn-lg"><i class="fa fa-fw fa-google"></i></a>
+</div>
 </div>
 </div>
 </div>
 </div>
 
 <!-- Sidebar Right -->
-<div class="modal fade" id="sidebar-right" tabindex="-1" role="dialog">
-<div class="modal-dialog" role="document">
+<div class="modal fade right" id="sidebar-right" tabindex="-1" role="dialog">
+<div class="modal-dialog modal-sm" role="document">
 <div class="modal-content">
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-<h4 class="modal-title">Modal title</h4>
+<h4 class="modal-title">Right Sidebar</h4>
 </div>
 <div class="modal-body">
-...
+
+<ul class="nav nav-pills nav-stacked text-center lead">
+<li role="presentation" class="active"><a href="#home">Home</a></li>
+<li role="presentation" class="dropdown">
+<a href="#" class="dropdown-toggle" id="myTabDrop1" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">Services <span class="fa fa-fw fa-chevron-down"></span></a>
+<ul class="dropdown-menu btn-block">
+<li><a href="#design" role="tab">Design</a></li>
+<li><a href="#develop" role="tab">Develop</a></li>
+<li><a href="#support" role="tab">Support</a></li>
+</ul>
+</li>
+<li role="presentation"><a href="#about">About</a></li>
+</ul>
+
 </div>
+</div>
+</div>
+</div>
+
+<div class="well" id="home">
+<div class="container">
+<div class="page-header">
+<h1>Home</h1>
+<p class="lead">Welcome to New York City!</p>
+</div>
+<img class="img-responsive" src="https://unsplash.it/1600/1000?image=818">
+
+<div id="services" class="page-header">
+<h1>Services</h1>
+</div>
+
+<div class="row">
+<div class="col-sm-offset-1 col-sm-11">
+
+<div class="media">
+<div class="media-left">
+<i class="fa fa-5x fa-pencil fa-fw"></i>
+</div>
+<div class="media-body">
+<h4 class="media-heading" id="design">Design</h4>
+<p>Design is a specification of an object, manifested by an agent, intended to accomplish goals, in a particular environment, using a set of primitive components, satisfying a set of requirements, subject to constraints.</p>
+</div>
+</div>
+
+<hr>
+
+<div class="media">
+<div class="media-left">
+<i class="fa fa-5x fa-code fa-fw"></i>
+</div>
+<div class="media-body">
+<h4 class="media-heading" id="develop">Develop</h4>
+<p>Development can range from developing the simplest static single page of plain text to the most complex web-based internet applications, electronic businesses, and social network services.</p>
+</div>
+</div>
+
+<hr>
+
+<div class="media">
+<div class="media-left">
+<i class="fa fa-5x fa-life-ring fa-fw"></i>
+</div>
+<div class="media-body">
+<h4 class="media-heading" id="support">Support</h4>
+<p>Support refers to a plethora of services which provide assistance to users of technology products such as mobile phones, televisions, computers, software products or other informatic, electronic or mechanical goods.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id="about" class="page-header">
+<h1>About</h1>
+</div>
+
+<blockquote>
+<p>Wake up with determination. Go to sleep with satisfaction.</p>
+<footer>Someone somewhere on the <cite>internet</cite>.</footer>
+</blockquote>
+
 </div>
 </div>
 </div>
