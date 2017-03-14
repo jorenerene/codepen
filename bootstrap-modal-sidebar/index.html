@@ -6,77 +6,7 @@
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css'>
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 <link rel="stylesheet" href="css.css">
-
-<style>
-/* Social Buttons - Twitter, Facebook, Google Plus */
-.btn-twitter {
-	background: #00acee;
-	color: #fff
-}
-.btn-twitter:link, .btn-twitter:visited {
-	color: #fff
-}
-.btn-twitter:active, .btn-twitter:hover {
-	background: #0087bd;
-	color: #fff
-}
-.btn-facebook {
-	background: #3b5998;
-	color: #fff
-}
-.btn-facebook:link, .btn-facebook:visited {
-	color: #fff
-}
-.btn-facebook:active, .btn-facebook:hover {
-	background: #30477a;
-	color: #fff
-}
-.btn-googleplus {
-	background: #e93f2e;
-	color: #fff
-}
-.btn-googleplus:link, .btn-googleplus:visited {
-	color: #fff
-}
-.btn-googleplus:active, .btn-googleplus:hover {
-	background: #ba3225;
-	color: #fff
-}
-
-/* MODAL FADE LEFT RIGHT BOTTOM */
-.modal.fade:not(.in).left .modal-dialog {
-	-webkit-transform: translate3d(-25%, 0, 0);
-	transform: translate3d(-25%, 0, 0);
-}
-.modal.fade:not(.in).right .modal-dialog {
-	-webkit-transform: translate3d(25%, 0, 0);
-	transform: translate3d(25%, 0, 0);
-}
-.modal.fade:not(.in).bottom .modal-dialog {
-	-webkit-transform: translate3d(0, 25%, 0);
-	transform: translate3d(0, 25%, 0);
-}
-
-.modal.right .modal-dialog {
-	position:absolute;
-	top:0;
-	right:0;
-	margin:0;
-}
-
-.modal.left .modal-dialog {
-	position:absolute;
-	top:0;
-	left:0;
-	margin:0;
-}
-
-.modal.left .modal-content, .modal.right .modal-content {
-	min-height:100vh;
-	border:0;
-}
-</style>
-</head><body>
+</head><body class="pt-50">
 
 <nav class="navbar navbar-default navbar-fixed-top">
 <div class="container">
@@ -97,7 +27,7 @@
 <h4 class="modal-title">Left Sidebar</h4>
 </div>
 <div class="modal-body">
-<a href="#home" data-dismiss="modal" class="btn btn-block btn-default btn-lg">Home</a>
+<a href="#home" class="btn btn-block btn-default btn-lg">Home</a>
 
 <!-- Split button -->
 <div class="btn-group btn-block">
@@ -131,10 +61,11 @@
 <hr>
 
 <div class="btn-group btn-group-justified">
-<a class="btn btn-facebook btn-lg"><i class="fa fa-fw fa-facebook"></i></a>
-<a class="btn btn-twitter btn-lg"><i class="fa fa-fw fa-twitter"></i></a>
-<a class="btn btn-googleplus btn-lg"><i class="fa fa-fw fa-google"></i></a>
+<a class="btn btn-instagram btn-lg" href="https://www.instagram.com/jorenerene/" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+<a class="btn btn-twitter btn-lg" href="https://www.twitter.com/jorenerene/" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+<a class="btn btn-github btn-lg" href="https://www.github.com/jorenerene/" target="_blank"><i class="fa fa-fw fa-github"></i></a>
 </div>
+
 </div>
 </div>
 </div>
@@ -163,19 +94,44 @@
 <li role="presentation"><a href="#about">About</a></li>
 </ul>
 
+<hr>
+
+<div class="form-group hide">
+<div class="input-group">
+<input class="form-control" placeholder="Search">
+<span class="input-group-btn">
+<button class="btn btn-default" type="button"><i class="fa fa-fw fa-search"></i></button>
+</span>
+</div>
+</div>
+
+<div class="form-group has-feedback">
+<input type="text" class="form-control" id="search-right" placeholder="Search">
+<span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
+</div>
+
+<hr>
+
+<div class="btn-group-vertical center-block">
+<a class="btn btn-instagram btn-lg" href="https://www.instagram.com/jorenerene/" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+<a class="btn btn-twitter btn-lg" href="https://www.twitter.com/jorenerene/" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+<a class="btn btn-github btn-lg" href="https://www.github.com/jorenerene/" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+</div>
+
 </div>
 </div>
 </div>
 </div>
 
-<div class="well" id="home">
-<div class="container">
+<div class="container" id="home">
 <div class="page-header">
 <h1>Home</h1>
-<p class="lead">Welcome to New York City!</p>
+<p class="lead">Modified Bootstrap Modals make great Sidebar Menus; or Side Drawer Menus, depending on your preferred Framework.</p>
 </div>
 <img class="img-responsive" src="https://unsplash.it/1600/1000?image=818">
+</div>
 
+<div class="container">
 <div id="services" class="page-header">
 <h1>Services</h1>
 </div>
@@ -231,9 +187,10 @@
 
 </div>
 </div>
-</div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+<script src="js.js"></script>
 
 </body></html>
