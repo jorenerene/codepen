@@ -14,8 +14,13 @@ $ (document).ready (function () {
 		$ (".btn-feedback").css ("right", "-90px");
 		$ (".btn-feedback").css ("opacity", "0.0");
     
-    if ($ (this).hasClass ("btn-instagram")) feedback = ".btn-heart";
-      else feedback = ".btn-retweet";
+		if ($ (this).hasClass ("btn-instagram")) {
+			feedback = ".btn-heart";
+			$ (".background").addClass ("reverse-gradient");
+		} else {
+			feedback = ".btn-retweet";
+			$ (".background").removeClass ("reverse-gradient");
+		}
 		
 		$ (feedback).each (function () {
 			var random = getRandomInt (20, 80);
@@ -31,6 +36,7 @@ $ (document).ready (function () {
 		});
 	});
 	
+	/*
 	window.setTimeout (function () {
 		$ (".btn-instagram").popover ("show");
 	}, 1000);
@@ -43,7 +49,8 @@ $ (document).ready (function () {
 			$ (".btn-instagram").popover ("toggle");
 			$ (".btn-twitter").popover ("toggle");			
 
-      $ (".background").toggleClass ("reverse-gradient");
-    }, 2000);
+			$ (".background").toggleClass ("reverse-gradient");
+		}, 2000);
 	}, 3000);
+	*/
 });
