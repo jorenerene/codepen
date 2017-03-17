@@ -1,0 +1,130 @@
+/* NAVBAR */
+
+/* NAVBAR COLLAPSE TRANSITION */
+.collapsing {
+	-webkit-transition: none;
+	transition: none;
+}
+
+/* OPEN CLOSE DROPDOWN TRANSITION */
+li.dropdown > a .fa {
+	transition:transform .25s;
+	transform:rotate(0deg);
+}
+
+li.dropdown.open > a .fa {
+	transition:transform .25s;
+	transform:rotate(-180deg);
+}
+
+/* SM, MD, LG */
+@media(min-width:768px) {
+	/* DROP-Y: DROPDOWN MENU TRANSLATEY TRANSITION */
+	.dropdown .dropdown-menu {
+		transform:translateY(20px);
+		transition: .25s transform, opacity ease;
+		display:block;
+		opacity:0;
+		visibility:hidden;
+	}
+
+	.dropdown.open .dropdown-menu {
+		transform:translateY(0px);
+		opacity:1;
+		visibility:visible;
+	}
+	/* END DROP-Y */
+
+	/* FADE DROPDOWN-MENU */
+	.open > .dropdown-menu {
+		animation-name: dropdownIn;
+		animation-duration:.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+
+		-webkit-animation-name: dropdownIn;
+		-webkit-animation-duration:.5s;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-timing-function: ease;
+		-webkit-animation-fill-mode: forwards;
+
+		-moz-animation-name: dropdownIn;
+		-moz-animation-duration:.5s;
+		-moz-animation-iteration-count: 1;
+		-moz-animation-timing-function: ease;
+		-moz-animation-fill-mode: forwards;
+	}
+
+	@keyframes dropdownIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes dropdownIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	/* DISLOCATE DROPDOWN-MENU WITH ARROW */
+	.dropdown ul.dropdown-menu {
+		border-radius:4px;
+		box-shadow:none;
+		margin-top:20px;
+	}
+
+	.dropdown ul.dropdown-menu:before {
+		content: "";
+		border-bottom: 10px solid #fff;
+		border-right: 10px solid transparent;
+		border-left: 10px solid transparent;
+		position: absolute;
+		top: -10px;
+		left: 13px;
+		z-index: 10;
+	}
+
+	.dropdown ul.dropdown-menu:after {
+		content: "";
+		border-bottom: 11px solid #ccc;
+		border-right: 11px solid transparent;
+		border-left: 11px solid transparent;
+		position: absolute;
+		top: -11px;
+		left: 12px;
+		z-index: 9;
+	}
+
+	/* ALTERNATE ARROW NAVBAR-RIGHT */
+	.navbar-right .dropdown ul.dropdown-menu:before {
+		content: "";
+		border-bottom: 10px solid #fff;
+		border-right: 10px solid transparent;
+		border-left: 10px solid transparent;
+		position: absolute;
+		top: -10px;
+		right: 13px;
+		left:auto;
+		z-index: 10;
+	}
+
+	.navbar-right .dropdown ul.dropdown-menu:after {
+		content: "";
+		border-bottom: 11px solid #ccc;
+		border-right: 11px solid transparent;
+		border-left: 11px solid transparent;
+		position: absolute;
+		top: -11px;
+		right: 12px;
+		left:auto;
+		z-index: 9;
+	}
+}
