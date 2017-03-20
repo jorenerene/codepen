@@ -64,14 +64,14 @@
 <div class="row">
 <div class="col-sm-8">
 
-<p class="lead">While highly functional, I needed to spruce up the default navbar dropdown. One of my designs resembles speech bubbles, and rotates the caret in concert with the dropdown menu softly settling into view. I ultimately expanded this design to encompass all dropdown instances. Should include dropup and dropdown-menu-right compatibility.</p>
+<p class="lead">Bootstrap <a data-toggle="tooltip" title="See the Tooltip arrow?">Tooltips</a> and <a data-toggle="popover" title="See the Popover arrow ..." data-container="body" data-content="... just below this content?" data-placement="top" data-trigger="hover">Popovers</a> point to their caller with arrows, why not dropdowns? While we're at it let's rotate the trigger carets in concert with the dropdown menu settling into view. This solution includes dropup and dropdown-menu-right compatibility; as well as a darker dropdown backdrop that fades in ala modals.</p>
 
 </div><div class="col-sm-4">
 
 <!-- Split button -->
 <div class="btn-group">
 <button type="button" class="btn btn-default">Split Button Dropdown</button>
-<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 <span class="fa fa-chevron-down"></span>
 <span class="sr-only">Toggle Dropdown</span>
 </button>
@@ -87,8 +87,8 @@
 <hr>
 
 <!-- Single button -->
-<div class="btn-group">
-<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="btn-group dropdown">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 Single Button Dropdown <span class="fa fa-chevron-down"></span>
 </button>
 <ul class="dropdown-menu">
@@ -102,12 +102,13 @@ Single Button Dropdown <span class="fa fa-chevron-down"></span>
 
 <hr>
 
+<!-- div.dropdown -->
 <div class="dropdown">
-<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
 Div Dropdown
 <span class="fa fa-chevron-down"></span>
 </button>
-<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+<ul class="dropdown-menu">
 <li><a href="#">Action</a></li>
 <li><a href="#">Another action</a></li>
 <li><a href="#">Something else here</a></li>
@@ -122,5 +123,12 @@ Div Dropdown
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+<script>
+$ (window).ready (function () {
+	$ ('[data-toggle="popover"]').popover ();
+	$ ('[data-toggle="tooltip"]').tooltip ();
+});
+</script>
 
 </body></html>

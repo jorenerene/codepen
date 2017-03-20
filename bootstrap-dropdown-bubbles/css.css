@@ -1,9 +1,6 @@
-/* NAVBAR */
-
-/* NAVBAR COLLAPSE TRANSITION */
-.collapsing {
-	-webkit-transition: none;
-	transition: none;
+/* DROPDOWN BACKDROP */
+.dropdown-backdrop {
+	background:rgba(0,0,0,0.5);
 }
 
 /* OPEN CLOSE DROPDOWN TRANSITION */
