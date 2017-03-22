@@ -1,5 +1,5 @@
 <!DOCTYPE html><html class='pen'><head>
-<title>Bootstrap Dropdown Bubbles</title>
+<title>Bootstrap Dropdown Arrow</title>
 <meta charset='UTF-8'>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css'>
@@ -23,9 +23,8 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <ul class="nav navbar-nav">
-<li><a href="#">Link</a></li>
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="fa fa-chevron-down"></span> &nbsp; Dropdown</a>
+<li class="arrow dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="caret"></span> &nbsp; .arrow.dropdown</a>
 <ul class="dropdown-menu">
 <li><a href="#">Action</a></li>
 <li><a href="#">Another action</a></li>
@@ -36,12 +35,18 @@
 <li><a href="#">One more separated link</a></li>
 </ul>
 </li>
+
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="caret"></span> &nbsp; .dropdown</a>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+</ul>
+</li>
 </ul>
 
 <ul class="nav navbar-nav navbar-right">
-<li><a href="#">Link</a></li>
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Dropdown &nbsp; <span class="fa fa-chevron-down"></span></a>
+<li class="arrow dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">.navbar-right .arrow.dropdown &nbsp; <span class="caret"></span></a>
 <ul class="dropdown-menu">
 <li><a href="#">Action</a></li>
 <li><a href="#">Another action</a></li>
@@ -57,21 +62,21 @@
 
 <main class="container">
 <div class="page-header">
-<h1>Bootstrap <small>3.3.7</small> Dropdown Bubbles</h1>
+<h1>Bootstrap <small>3.3.7</small> Dropdown Arrow</h1>
 </div>
 
 <div class="row">
 <div class="col-sm-8">
 
-<p class="lead">Bootstrap <a data-toggle="tooltip" title="See the Tooltip arrow?">Tooltips</a> and <a data-toggle="popover" title="See the Popover arrow ..." data-container="body" data-content="... just below this content?" data-placement="top" data-trigger="hover">Popovers</a> point to their caller with arrows. Modals have backdrops. Why not dropdowns? While we're at it let's rotate the trigger carets in concert with the dropdown menu settling into view. This solution includes dropup and dropdown-menu-right compatibility; as well as a darker dropdown backdrop that fades in ala modals.</p>
+<p class="lead">Bootstrap <a data-toggle="tooltip" title="See the Tooltip arrow?">Tooltips</a> and <a data-toggle="popover" title="See the Popover arrow ..." data-container="body" data-content="... just below this content?" data-placement="top" data-trigger="hover">Popovers</a> point to their trigger with arrows. Modals have backdrops. Why not dropdowns? Added subtle caret rotations to help coordinate the user experience.</p>
 
 </div><div class="col-sm-4">
 
 <!-- Split button -->
-<div class="btn-group">
+<div class="btn-group arrow dropdown">
 <button type="button" class="btn btn-default">Split Button Dropdown</button>
 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-<span class="fa fa-chevron-down"></span>
+<span class="caret"></span>
 <span class="sr-only">Toggle Dropdown</span>
 </button>
 <ul class="dropdown-menu">
@@ -86,9 +91,9 @@
 <hr>
 
 <!-- Single button -->
-<div class="btn-group dropdown">
+<div class="btn-group arrow dropdown">
 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-Single Button Dropdown <span class="fa fa-chevron-down"></span>
+<span class="caret"></span> Single Button Dropdown
 </button>
 <ul class="dropdown-menu">
 <li><a href="#">Action</a></li>
@@ -102,10 +107,10 @@ Single Button Dropdown <span class="fa fa-chevron-down"></span>
 <hr>
 
 <!-- div.dropdown -->
-<div class="dropdown">
+<div class="arrow dropdown">
 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
 Div Dropdown
-<span class="fa fa-chevron-down"></span>
+<span class="caret"></span>
 </button>
 <ul class="dropdown-menu">
 <li><a href="#">Action</a></li>

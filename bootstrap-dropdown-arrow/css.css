@@ -1,15 +1,30 @@
 /* DROPDOWN BACKDROP */
+.navbar {
+	z-index:1000;
+}
+
 .dropdown-backdrop {
 	background:rgba(0,0,0,0.5);
 }
 
+.navbar-backdrop {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	z-index: 990;
+	
+	background:rgba(0,0,0,0.5);
+}
+
 /* OPEN CLOSE DROPDOWN TRANSITION */
-li.dropdown > a .fa {
+.arrow.dropdown .caret {
 	transition:transform .25s;
 	transform:rotate(0deg);
 }
 
-li.dropdown.open > a .fa {
+.arrow.dropdown.open .caret {
 	transition:transform .25s;
 	transform:rotate(-180deg);
 }
@@ -17,7 +32,7 @@ li.dropdown.open > a .fa {
 /* SM, MD, LG */
 @media(min-width:768px) {
 	/* DROP-Y: DROPDOWN MENU TRANSLATEY TRANSITION */
-	.dropdown .dropdown-menu {
+	.arrow.dropdown .dropdown-menu {
 		transform:translateY(20px);
 		transition: .25s transform, opacity ease;
 		display:block;
@@ -25,7 +40,7 @@ li.dropdown.open > a .fa {
 		visibility:hidden;
 	}
 
-	.dropdown.open .dropdown-menu {
+	.arrow.dropdown.open .dropdown-menu {
 		transform:translateY(0px);
 		opacity:1;
 		visibility:visible;
@@ -33,7 +48,7 @@ li.dropdown.open > a .fa {
 	/* END DROP-Y */
 
 	/* FADE DROPDOWN-MENU */
-	.open > .dropdown-menu {
+	.arrow.dropdown.open > .dropdown-menu {
 		animation-name: dropdownIn;
 		animation-duration:.5s;
 		animation-iteration-count: 1;
@@ -72,13 +87,13 @@ li.dropdown.open > a .fa {
 	}
 
 	/* DISLOCATE DROPDOWN-MENU WITH ARROW */
-	.dropdown ul.dropdown-menu {
+	.arrow.dropdown ul.dropdown-menu {
 		border-radius:4px;
 		box-shadow:none;
 		margin-top:20px;
 	}
 
-	.dropdown ul.dropdown-menu:before {
+	.arrow.dropdown ul.dropdown-menu:before {
 		content: "";
 		border-bottom: 10px solid #fff;
 		border-right: 10px solid transparent;
@@ -89,7 +104,7 @@ li.dropdown.open > a .fa {
 		z-index: 10;
 	}
 
-	.dropdown ul.dropdown-menu:after {
+	.arrow.dropdown ul.dropdown-menu:after {
 		content: "";
 		border-bottom: 11px solid #ccc;
 		border-right: 11px solid transparent;
@@ -101,7 +116,7 @@ li.dropdown.open > a .fa {
 	}
 
 	/* ALTERNATE ARROW NAVBAR-RIGHT */
-	.navbar-right .dropdown ul.dropdown-menu:before {
+	.navbar-right .arrow.dropdown ul.dropdown-menu:before {
 		content: "";
 		border-bottom: 10px solid #fff;
 		border-right: 10px solid transparent;
@@ -113,7 +128,7 @@ li.dropdown.open > a .fa {
 		z-index: 10;
 	}
 
-	.navbar-right .dropdown ul.dropdown-menu:after {
+	.navbar-right .arrow.dropdown ul.dropdown-menu:after {
 		content: "";
 		border-bottom: 11px solid #ccc;
 		border-right: 11px solid transparent;
