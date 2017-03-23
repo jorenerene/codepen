@@ -14,7 +14,7 @@ The following projects have been published:
 
 The following projects are currently scheduled for completion:
 
-* Bootstrap Dropdown Bubbles
+* Bootstrap Dropdown Arrow
 * Page Progress Bar
 * Bunny by Canvas, CSS, or SVG
-* Bootstrap Navbar Backdrop
+* Fontstrap
