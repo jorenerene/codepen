@@ -68,17 +68,17 @@
 <div class="row">
 <div class="col-sm-8">
 
-<p class="lead">Bootstrap <a data-toggle="tooltip" title="See the Tooltip arrow?">Tooltips</a> and <a data-toggle="popover" title="See the Popover arrow ..." data-container="body" data-content="... just below this content?" data-placement="top" data-trigger="hover">Popovers</a> point to their trigger with arrows. Modals have backdrops. Why not dropdowns? Added subtle caret rotations to help coordinate the user experience.</p>
+<p class="lead">Bootstrap <a data-toggle="tooltip" title="See the Tooltip arrow?">Tooltips</a> and <a data-toggle="popover" title="See the Popover arrow ..." data-container="body" data-content="... just below this content?" data-placement="top" data-trigger="hover">Popovers</a> point to their trigger with arrows. Modals have backdrops. Why not Dropdowns? Added subtle caret rotations to help coordinate the user experience.</p>
 
 </div><div class="col-sm-4">
 
 <!-- Split button -->
 <div class="btn-group arrow dropdown">
-<button type="button" class="btn btn-default">Split Button Dropdown</button>
 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 <span class="caret"></span>
 <span class="sr-only">Toggle Dropdown</span>
 </button>
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Split Button Dropdown</button>
 <ul class="dropdown-menu">
 <li><a href="#">Action</a></li>
 <li><a href="#">Another action</a></li>
@@ -93,7 +93,7 @@
 <!-- Single button -->
 <div class="btn-group arrow dropdown">
 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-<span class="caret"></span> Single Button Dropdown
+<span class="caret"></span> &nbsp; Single Button Dropdown
 </button>
 <ul class="dropdown-menu">
 <li><a href="#">Action</a></li>
@@ -109,8 +109,25 @@
 <!-- div.dropdown -->
 <div class="arrow dropdown">
 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-Div Dropdown
+<span class="caret"></span> &nbsp; Div Dropdown
+</button>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="#">Separated link</a></li>
+</ul>
+</div>
+
+<hr>
+
+<!-- Drop Up -->
+<div class="btn-group dropup">
+<button type="button" class="btn btn-default">Dropup</button>
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 <span class="caret"></span>
+<span class="sr-only">Toggle Dropdown</span>
 </button>
 <ul class="dropdown-menu">
 <li><a href="#">Action</a></li>

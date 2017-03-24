@@ -12,7 +12,7 @@ The following projects have been published:
 * [Improved Replay Poker UX](http://codepen.io/jorenerene/pen/aJJOMJ)
 * [Bootstrap Modal Sidebar](http://codepen.io/jorenerene/pen/ZeJegv)
 
-The following projects are currently scheduled for completion:
+The following projects are scheduled for completion:
 
 * Bootstrap Dropdown Arrow
 * Page Progress Bar
