@@ -18,3 +18,4 @@ The following projects are scheduled for completion:
 * Page Progress Bar
 * Bunny by Canvas, CSS, or SVG
 * Fontstrap
+* Youtube Parenting Duplicity
