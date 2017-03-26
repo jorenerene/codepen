@@ -1,16 +1,30 @@
 <!DOCTYPE html><html class='pen'><head>
-<title>Parenting Duplicity</title>
+<title>Parenting Pearls</title>
 <meta charset='UTF-8'>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css'>
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 
 <style>
+@-webkit-keyframes slide {
+	from { background-position: left 0; }
+	to { background-position: left 350px; }
+}
+
+body {
+	background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://68.media.tumblr.com/2d5b3d2e1a59bc02b3c1578377416171/tumblr_ondjrxqPIX1qjqi9so1_1280.png');
+	background-repeat:repeat;
+	
+	-webkit-animation: slide 6s linear infinite;
+}
+
 #layer-1 {
 	width:100%;
 	height:400px;
 
 	display:none;
+
+	background:white;
 }
 
 #layer-2 {
@@ -18,6 +32,8 @@
 	height:400px;
 	
 	display:block;
+
+	background:white;
 }
 
 .toggle #layer-1 {
@@ -27,29 +43,72 @@
 .toggle #layer-2 {
 	display:none;
 }
+
+#paternal {
+	display:none;
+}
+
+.toggle #paternal {
+	display:inline;
+}
+
+.toggle #maternal {
+	display:none;
+}
+
+#layer-toggle {
+	position:absolute;
+	top:0;
+	left:0;
+	
+	width:100%;
+	height:100%;
+	
+	opacity:0;
+	
+	z-index:99999999999999999;
+}
 </style>
 </head><body>
 
 <header class="container">
 <div class="page-header">
-<h1>Parenting Duplicity</h1>
-<p class="lead">Inspired by this brilliant <a href="https://digitalsynopsis.com/advertising/honda-civic-type-r-the-other-side/" target="_blank">Honda Ad by Wieden + Kennedy London</a>, a single key stroke (P), like a single parent, results in a drastically different parenting experience.</p>
+<h1>Parenting Pearls</h1>
+<p class="lead">Inspired by this brilliant <a href="https://digitalsynopsis.com/advertising/honda-civic-type-r-the-other-side/" target="_blank">Honda Ad by Wieden + Kennedy London</a>, a single key stroke (Press the "P" Key, or touch the video), like a single parent, can result in drastically different child rearing experiences.</p>
 </div>
 </header>
 
 <main class="container" id="switch">
 <div class="row">
-<div class="col-sm-12" id="switch">
+<div class="col-sm-8" id="switch">
 
-<div id="layer-1" class="bg-primary"></div>
-<div id="layer-2" class="bg-danger"></div>
+<div id="layer-toggle"></div>
 
+<div id="layer-1">
+<div class="embed-responsive embed-responsive-16by9">
+<div id="layer-1-player"></div>
 </div>
 </div>
 
-<hr>
+<div id="layer-2">
+<div class="embed-responsive embed-responsive-16by9">
+<div id="layer-2-player"></div>
+</div>
+</div>
+
+</div>
+
+<div class="col-sm-4">
+<hr class="visible-xs">
+
+<h2><i class="fa fa-play"></i> &nbsp; <span id="maternal">Nurturing Mama</span><span id="paternal">Hardnosed Papa</span></h2>
+
+<p>For reference, I didn't want to buy our son toys. Infants are resourceful and dumb, common household items should suffice. My wife insisted on purchasing what amounted to a colorful array of educational chew toys.</p>
 
 <p class="small">No babies were harmed in this production, my wife was away for the weekend though ... <i class="fa fa-smile-o"></i></p>
+
+</div>
+</div>
 
 </main>
 
@@ -57,17 +116,93 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 
 <script>
+/* https://developers.google.com/youtube/iframe_api_reference */
+
+var tag = document.createElement ("script");
+
+tag.src = "https://www.youtube.com/iframe_api";
+
+var firstScriptTag = document.getElementsByTagName ("script")[0];
+firstScriptTag.parentNode.insertBefore (tag, firstScriptTag);
+
+var playerOne, playerTwo;
+
+function onYouTubeIframeAPIReady () {
+	playerOne = new YT.Player ("layer-1-player", {
+		height: "390",
+		width: "640",
+		videoId: "DN0vsBUgFZ4",
+		playerVars: {
+			controls: 0,
+			showinfo: 0,
+			modestbranding:1,
+			autohide:1
+		},
+		events: {
+			"onReady": onPlayerReady,
+			"onStateChange": onPlayerStateChange
+		}
+	});
+
+	playerTwo = new YT.Player ("layer-2-player", {
+		height: "390",
+		width: "640",
+		videoId: "nfYXqcnJmGU",
+		playerVars: {
+			controls: 0,
+			showinfo: 0,
+			modestbranding:1,
+			autohide:1
+		},
+		events: {
+			"onReady": onPlayerReady,
+			"onStateChange": onPlayerStateChange
+		}
+	});
+}
+
+function onPlayerReady (event) {
+	event.target.mute ();
+	event.target.playVideo ();
+}
+
+function onPlayerStateChange (event) {
+	if (event.data === YT.PlayerState.ENDED) {
+		event.target.playVideo (); 
+	}
+}
+
+function paternalParent () {
+	$ ("#switch").addClass ("toggle");
+	
+	$ ("body").css ("background", "linear-gradient(rgba(255,227,227,0.85), rgba(255,227,227,0.85)), url('https://68.media.tumblr.com/6c894cc54d4ec81fc7c229bcf54b7257/tumblr_ondvifW3F31qjqi9so1_1280.png')");
+}
+
+function maternalParent () {
+	$ ("#switch").removeClass ("toggle");
+	
+	$ ("body").css ("background", "linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://68.media.tumblr.com/2d5b3d2e1a59bc02b3c1578377416171/tumblr_ondjrxqPIX1qjqi9so1_1280.png')");
+}
+
 $ (window).ready (function () {
 	$ (window).keydown (function (e) {
 		if (e.which == 80) {
-			$ ("#switch").addClass ("toggle");
+			paternalParent ()
 		}
 	});
 	
 	$ (window).keyup (function (e) {
 		if (e.which == 80) {
-			$ ("#switch").removeClass ("toggle");
+			maternalParent ()
 		}
+	});
+	
+	$ ("#layer-toggle").on ("mousedown touchstart", function (e) {
+		paternalParent ()
+	});
+
+	$ ("#layer-toggle").on ("mouseup touchend", function (e) {
+		maternalParent ()
 	});
 });
 </script>
