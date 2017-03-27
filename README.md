@@ -20,3 +20,4 @@ The following projects are scheduled for completion:
 * Fontstrap
 * Youtube Parenting Pearls
 * Topper
+* Navbar Search Brand

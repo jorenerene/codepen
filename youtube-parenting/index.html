@@ -6,42 +6,34 @@
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 
 <style>
+/*
 @-webkit-keyframes slide {
 	from { background-position: left 0; }
 	to { background-position: left 350px; }
 }
+*/
 
 body {
 	background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://68.media.tumblr.com/2d5b3d2e1a59bc02b3c1578377416171/tumblr_ondjrxqPIX1qjqi9so1_1280.png');
 	background-repeat:repeat;
 	
-	-webkit-animation: slide 6s linear infinite;
+	/* -webkit-animation: slide 6s linear infinite; */
 }
 
-#layer-1 {
-	width:100%;
-	height:400px;
-
-	display:none;
-
-	background:white;
+#playerOne {
+	z-index:100;
 }
 
-#layer-2 {
-	width:100%;
-	height:400px;
-	
-	display:block;
-
-	background:white;
+#playerTwo {
+	z-index:200;
 }
 
-.toggle #layer-1 {
-	display:block;
+.toggle #playerOne {
+	z-index:200;
 }
 
-.toggle #layer-2 {
-	display:none;
+.toggle #playerTwo {
+	z-index:100;
 }
 
 #paternal {
@@ -49,7 +41,7 @@ body {
 }
 
 .toggle #paternal {
-	display:inline;
+	display:block;
 }
 
 .toggle #maternal {
@@ -64,9 +56,14 @@ body {
 	width:100%;
 	height:100%;
 	
-	opacity:0;
+	opacity:0.5;
 	
-	z-index:99999999999999999;
+	z-index:300;
+}
+
+#layer-toggle.black {
+	background:black;
+	opacity:1;
 }
 </style>
 </head><body>
@@ -74,38 +71,37 @@ body {
 <header class="container">
 <div class="page-header">
 <h1>Parenting Pearls</h1>
-<p class="lead">Inspired by this brilliant <a href="https://digitalsynopsis.com/advertising/honda-civic-type-r-the-other-side/" target="_blank">Honda Ad by Wieden + Kennedy London</a>, a single key stroke (Press the "P" Key, or touch the video), like a single parent, can result in drastically different child rearing experiences.</p>
+<p class="lead">Inspired by this brilliant <a href="https://digitalsynopsis.com/advertising/honda-civic-type-r-the-other-side/" target="_blank">Honda Ad by Wieden + Kennedy London</a>, a single key stroke (Press the "P" Key, or touch the video), like an additional parent, can result in a drastically different child rearing experience.</p>
 </div>
 </header>
 
 <main class="container" id="switch">
 <div class="row">
 <div class="col-sm-8" id="switch">
+<div id="layer-toggle" class="black"></div>
 
-<div id="layer-toggle"></div>
-
-<div id="layer-1">
 <div class="embed-responsive embed-responsive-16by9">
-<div id="layer-1-player"></div>
+<div id="playerOne"></div>
+<div id="playerTwo"></div>
 </div>
-</div>
-
-<div id="layer-2">
-<div class="embed-responsive embed-responsive-16by9">
-<div id="layer-2-player"></div>
-</div>
-</div>
-
 </div>
 
 <div class="col-sm-4">
 <hr class="visible-xs">
 
-<h2><i class="fa fa-play"></i> &nbsp; <span id="maternal">Nurturing Mama</span><span id="paternal">Hardnosed Papa</span></h2>
+<h2 id="maternal"><i class="fa fa-heart text-danger"></i> &nbsp; Nurturing Mama</h2>
+
+<h2 id="paternal"><i class="fa fa-exclamation-triangle text-danger"></i> &nbsp; Hardnosed Papa</h2>
 
 <p>For reference, I didn't want to buy our son toys. Infants are resourceful and dumb, common household items should suffice. My wife insisted on purchasing what amounted to a colorful array of educational chew toys.</p>
 
-<p class="small">No babies were harmed in this production, my wife was away for the weekend though ... <i class="fa fa-smile-o"></i></p>
+<p class="small"><strong>Notes:</strong></p>
+
+<ul class="small">
+<li>Merely toggling the iframe display between block and none caused an unsightly flicker; toggling the z-index within a single container is far smoother.</li>
+<li>No babies were harmed in this production, my wife was away for the weekend though ... <i class="fa fa-smile-o"></i></li>
+<li>Kudos to <a href="https://flaticon.com" target="_blank">Flaticon</a> for the background icons and pattern generator.</li>
+</ul>
 
 </div>
 </div>
@@ -128,10 +124,8 @@ firstScriptTag.parentNode.insertBefore (tag, firstScriptTag);
 var playerOne, playerTwo;
 
 function onYouTubeIframeAPIReady () {
-	playerOne = new YT.Player ("layer-1-player", {
-		height: "390",
-		width: "640",
-		videoId: "DN0vsBUgFZ4",
+	playerOne = new YT.Player ("playerOne", {
+		videoId: "pXo-qYia8Yg",
 		playerVars: {
 			controls: 0,
 			showinfo: 0,
@@ -144,10 +138,8 @@ function onYouTubeIframeAPIReady () {
 		}
 	});
 
-	playerTwo = new YT.Player ("layer-2-player", {
-		height: "390",
-		width: "640",
-		videoId: "nfYXqcnJmGU",
+	playerTwo = new YT.Player ("playerTwo", {
+		videoId: "V4s8bjN0BAM",
 		playerVars: {
 			controls: 0,
 			showinfo: 0,
@@ -162,6 +154,8 @@ function onYouTubeIframeAPIReady () {
 }
 
 function onPlayerReady (event) {
+	$ ("#layer-toggle").removeClass ("black");
+	
 	event.target.mute ();
 	event.target.playVideo ();
 }
