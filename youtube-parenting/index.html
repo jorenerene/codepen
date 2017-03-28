@@ -5,67 +5,7 @@
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css'>
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 
-<style>
-/*
-@-webkit-keyframes slide {
-	from { background-position: left 0; }
-	to { background-position: left 350px; }
-}
-*/
-
-body {
-	background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://68.media.tumblr.com/2d5b3d2e1a59bc02b3c1578377416171/tumblr_ondjrxqPIX1qjqi9so1_1280.png');
-	background-repeat:repeat;
-	
-	/* -webkit-animation: slide 6s linear infinite; */
-}
-
-#playerOne {
-	z-index:100;
-}
-
-#playerTwo {
-	z-index:200;
-}
-
-.toggle #playerOne {
-	z-index:200;
-}
-
-.toggle #playerTwo {
-	z-index:100;
-}
-
-#paternal {
-	display:none;
-}
-
-.toggle #paternal {
-	display:block;
-}
-
-.toggle #maternal {
-	display:none;
-}
-
-#layer-toggle {
-	position:absolute;
-	top:0;
-	left:0;
-	
-	width:100%;
-	height:100%;
-	
-	opacity:0.5;
-	
-	z-index:300;
-}
-
-#layer-toggle.black {
-	background:black;
-	opacity:1;
-}
-</style>
+<link rel="stylesheet" href="css.css">
 </head><body>
 
 <header class="container">
@@ -101,6 +41,7 @@ body {
 <li>Merely toggling the iframe display between block and none caused an unsightly flicker; toggling the z-index within a single container is far smoother.</li>
 <li>No babies were harmed in this production, my wife was away for the weekend though ... <i class="fa fa-smile-o"></i></li>
 <li>Kudos to <a href="https://flaticon.com" target="_blank">Flaticon</a> for the background icons and pattern generator.</li>
+<li>Yes, I shot both of these videos with a potato ($60 Blu R1 HD to be exact), but the timing was opportunistic and obscure enough to not be exploitative.</li>
 </ul>
 
 </div>
@@ -111,94 +52,6 @@ body {
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 
-<script>
-/* https://developers.google.com/youtube/iframe_api_reference */
-
-var tag = document.createElement ("script");
-
-tag.src = "https://www.youtube.com/iframe_api";
-
-var firstScriptTag = document.getElementsByTagName ("script")[0];
-firstScriptTag.parentNode.insertBefore (tag, firstScriptTag);
-
-var playerOne, playerTwo;
-
-function onYouTubeIframeAPIReady () {
-	playerOne = new YT.Player ("playerOne", {
-		videoId: "pXo-qYia8Yg",
-		playerVars: {
-			controls: 0,
-			showinfo: 0,
-			modestbranding:1,
-			autohide:1
-		},
-		events: {
-			"onReady": onPlayerReady,
-			"onStateChange": onPlayerStateChange
-		}
-	});
-
-	playerTwo = new YT.Player ("playerTwo", {
-		videoId: "V4s8bjN0BAM",
-		playerVars: {
-			controls: 0,
-			showinfo: 0,
-			modestbranding:1,
-			autohide:1
-		},
-		events: {
-			"onReady": onPlayerReady,
-			"onStateChange": onPlayerStateChange
-		}
-	});
-}
-
-function onPlayerReady (event) {
-	$ ("#layer-toggle").removeClass ("black");
-	
-	event.target.mute ();
-	event.target.playVideo ();
-}
-
-function onPlayerStateChange (event) {
-	if (event.data === YT.PlayerState.ENDED) {
-		event.target.playVideo (); 
-	}
-}
-
-function paternalParent () {
-	$ ("#switch").addClass ("toggle");
-	
-	$ ("body").css ("background", "linear-gradient(rgba(255,227,227,0.85), rgba(255,227,227,0.85)), url('https://68.media.tumblr.com/6c894cc54d4ec81fc7c229bcf54b7257/tumblr_ondvifW3F31qjqi9so1_1280.png')");
-}
-
-function maternalParent () {
-	$ ("#switch").removeClass ("toggle");
-	
-	$ ("body").css ("background", "linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://68.media.tumblr.com/2d5b3d2e1a59bc02b3c1578377416171/tumblr_ondjrxqPIX1qjqi9so1_1280.png')");
-}
-
-$ (window).ready (function () {
-	$ (window).keydown (function (e) {
-		if (e.which == 80) {
-			paternalParent ()
-		}
-	});
-	
-	$ (window).keyup (function (e) {
-		if (e.which == 80) {
-			maternalParent ()
-		}
-	});
-	
-	$ ("#layer-toggle").on ("mousedown touchstart", function (e) {
-		paternalParent ()
-	});
-
-	$ ("#layer-toggle").on ("mouseup touchend", function (e) {
-		maternalParent ()
-	});
-});
-</script>
+<script src="js.js"></script>
 
 </body></html>

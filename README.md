@@ -11,6 +11,7 @@ The following projects have been published:
 * [Bootstrap Navbar Toggles](http://codepen.io/jorenerene/pen/vxKbJb)
 * [Improved Replay Poker UX](http://codepen.io/jorenerene/pen/aJJOMJ)
 * [Bootstrap Modal Sidebar](http://codepen.io/jorenerene/pen/ZeJegv)
+* [Youtube Parenting Pearls](http://codepen.io/jorenerene/pen/peOWWL)
 
 The following projects are scheduled for completion:
 
@@ -18,6 +19,5 @@ The following projects are scheduled for completion:
 * Page Progress Bar
 * Bunny by Canvas, CSS, or SVG
 * Fontstrap
-* Youtube Parenting Pearls
 * Topper
 * Navbar Search Brand
