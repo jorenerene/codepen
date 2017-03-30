@@ -1,0 +1,124 @@
+#chevron {
+	z-index:10;
+}
+
+#arrows {
+	z-index:5;
+}
+/* Topper */
+
+.topper {
+	cursor:pointer;
+
+	position: fixed;
+	bottom:10%;
+	right:10%;
+
+	visibility: hidden;
+	opacity: 0;
+
+	-webkit-transition: opacity .3s 0s, visibility 0s .3s;
+	-moz-transition: opacity .3s 0s, visibility 0s .3s;
+	transition: opacity .3s 0s, visibility 0s .3s;
+}
+
+.topper.is-visible, .topper.topper-fade-out, .no-touch .topper:hover {
+	-webkit-transition: opacity .3s 0s, visibility 0s 0s;
+	-moz-transition: opacity .3s 0s, visibility 0s 0s;
+	transition: opacity .3s 0s, visibility 0s 0s;
+}
+
+.is-visible {
+	/* the button becomes visible */
+	visibility: visible;
+	opacity: 1;
+}
+
+.topper-fade-out {
+	/* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+	opacity: .5;
+}
+
+.no-touch .topper:hover {
+	opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+	.topper {
+		/*
+		right: 20px;
+		bottom: 20px;
+		*/
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.topper {
+		/*
+		height: 60px;
+		width: 60px;
+		right: 30px;
+		bottom: 30px;
+		*/
+	}
+}
+/* END BACK TO TOP */
+
+#topper {
+	position:fixed;
+	bottom:10%;
+	right:10%;
+	
+	cursor:pointer;
+}
+
+/* Buzz */
+@-webkit-keyframes buzz {
+	50% {
+		-webkit-transform: translateX(3px) rotate(2deg);
+		transform: translateX(3px) rotate(2deg);
+	}
+	100% {
+		-webkit-transform: translateX(-3px) rotate(-2deg);
+		transform: translateX(-3px) rotate(-2deg);
+	}
+}
+@keyframes buzz {
+	50% {
+		-webkit-transform: translateX(3px) rotate(2deg);
+		transform: translateX(3px) rotate(2deg);
+	}
+	100% {
+		-webkit-transform: translateX(-3px) rotate(-2deg);
+		transform: translateX(-3px) rotate(-2deg);
+	}
+}
+
+.trails {
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	
+	transition: .15s all;
+	opacity:0;
+}
+
+.trails.buzz {
+	-webkit-animation-name: buzz;
+	animation-name: buzz;
+	-webkit-animation-duration: 0.15s;
+	animation-duration: 0.15s;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	
+	opacity:1;
+}
+
+#arrows.away {
+	-webkit-transform: translateY(-100px);
+	transform:  translateY(-100px);
+	
+	transition:2s transform;
+}
