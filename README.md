@@ -15,10 +15,10 @@ The following projects have been published:
 
 The following projects are scheduled for completion:
 
-* Bootstrap Dropdown Arrow
 * Over The Top
 * Bunny by Canvas, CSS, or SVG
+* Project Placeholder
+* Bootstrap Dropdown Arrow
 * Navbar Search Brand
 * Page Progress Bar
 * Fontstrap
-* Project Placeholder

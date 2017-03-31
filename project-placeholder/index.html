@@ -10,19 +10,28 @@
 <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Roboto+Slab" rel="stylesheet">
 
 <style>
+.m-0 {
+	margin:0;
+}
+
 body {
 	background:url("https://unsplash.it/1500/1000/?random");
 }
 
-aside.col-sm-5 {
+#bg-none {
+	background:none;
+}
+
+#placard {
 	min-height:100vh;
 	background:rgba(255,255,255,0.9);
 	padding-left:50px;
 	padding-right:50px;
+	padding-top:30px;
 }
 
-blockquote h1 {
-	font-family:"Roboto Slab", "Alfa Slab One";
+#message h1 {
+	/* font-family:"Roboto Slab", "Alfa Slab One"; */
 }
 </style>
 
@@ -30,12 +39,10 @@ blockquote h1 {
 
 <div class="container-fluid">
 <div class="row">
-<aside class="col-sm-5">
-
-<div class="page-header">
+<aside id="placard" class="col-md-5 col-sm-8">
 
 <div class="media">
-<div class="media-left">
+<div class="media-left media-middle">
 <i class="fa fa-5x fa-heart"></i>
 </div>
 <div class="media-body">
@@ -43,14 +50,45 @@ blockquote h1 {
 <p class="small text-muted">by <a href="http://www.prosperful.com" target="_blank">Prosperful</a></p>
 </div>
 </div>
+
+<hr>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+<div class="item active">
+<div class="m-0 alert alert-danger well-lg">
+<h1>Error</h1>
+<h2>404 &mdash; File not found</h2>
+<p class="small">Please visit the <a class="alert-link" href="https://fonts.google.com/" target="_blank">homepage</a>.</p>
+</div>
 </div>
 
-<blockquote>
-<h1>Memorable<br>
-Project<br>
-Slogan or Quote!</h1>
-<footer>Preferably using a custom or <a href="https://fonts.google.com/" target="_blank">Google Font</a>.</footer>
-</blockquote>
+<div class="item">
+<div class="m-0 alert alert-success well-lg">
+<h1>Coming Soon</h1>
+<h2>Memorable slogan or quote</h2>
+<p class="small">Scheduled for completion in the future.</p>
+</div>
+</div>
+
+<div class="item">
+<div class="m-0 alert alert-info well-lg">
+<h1>Maintenance Mode</h1>
+<h2>Sorry for the interruption</h2>
+<p class="small">Please check back soon.</p>
+</div>
+</div>
+
+</div>
+
+<!-- Controls -->
+<a id="bg-none" class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
 
 <hr>
 

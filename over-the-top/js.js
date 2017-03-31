@@ -28,6 +28,7 @@ $ (window).ready (function () {
 	$ ("#chevron").hover (function () {
 		$ ("#arrows").addClass ("is-visible");
 		$ (".trails").addClass ("buzz");
+		$ ("#arrows").removeClass ("away");
 	}, function () {
 		$ ("#arrows").removeClass ("is-visible");
 	});
