@@ -1,0 +1,159 @@
+/*
+https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
+
+http://stackoverflow.com/questions/8936803/rotating-around-an-arbitrary-point-html5-canvas
+To rotate around a point you need to do 3 steps:
+First translate the context to the center you wish to rotate around.
+Then do the actual rotation.
+Then translate the context back.
+
+http://stackoverflow.com/questions/2172798/how-to-draw-an-oval-in-html5-canvas
+
+https://css-tricks.com/transforms-on-svg-elements/
+
+Background - http://wallpapercave.com/cartoon-background
+*/
+
+.mtb-vh {
+	margin:20vh 0 10vh;
+	font-family:"Fredoka One";
+	color:white;
+}
+
+.pen hr {
+	border-width:4px;
+	border-color:white;
+}
+
+.mtb-vh a:hover, .mtb-vh a:focus {
+	text-decoration:none;
+}
+
+.mtb-vh a {
+	color:pink;
+	border-bottom:3px solid pink;
+	font-size:20px;
+	letter-spacing:1px;
+}
+
+a {
+	cursor:pointer;
+}
+
+.pen body {
+	overflow-x:hidden;
+}
+
+#canvas-rabbit, #css-rabbit, #svg-rabbit {
+	width:300px;
+	height:300px;
+}
+
+#css-rabbit {
+	position:relative;
+}
+
+.css-rabbit-head {
+	width:100px;
+	height:100px;
+	position:absolute;
+	border-radius:50%;
+	background-color:white;
+	top:100px;
+	left:100px;
+}
+
+.css-rabbit-eyes:after {
+	content:"";
+	width:5px;
+	height:10px;
+	position:absolute;
+	border-radius:50%;
+	background-color:black;
+	top:30px;
+	left:30px;
+}
+
+.css-rabbit-eyes:before {
+	content:"";
+	width:5px;
+	height:10px;
+	position:absolute;
+	border-radius:50%;
+	background-color:black;
+	top:30px;
+	left:65px;
+}
+
+.css-rabbit-ears:after {
+	content:"";
+	width:40px;
+	height:100px;
+	position:absolute;
+	border-radius:50%;
+	background-color:lightpink;
+	top:-80px;
+	left:10px;
+	border:solid 10px white;
+	transform-origin:bottom center;
+	transform:rotateZ(-20deg);
+	z-index:-1;
+}
+
+.css-rabbit-ears:before {
+	content:"";
+	width:40px;
+	height:100px;
+	position:absolute;
+	border-radius:50%;
+	background-color:lightpink;
+	top:-80px;
+	left:50px;
+	border:solid 10px white;
+	transform-origin:bottom center;
+	transform:rotateZ(20deg);
+	z-index:-1;
+}
+
+.css-rabbit-nose {
+	width:20px;
+	height:10px;
+	position:absolute;
+	border-radius:50%;
+	background-color:pink;
+	top:60px;
+	left:40px;
+	
+	/* border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 32px;
+    border-bottom-left-radius: 32px; */
+}
+
+.flex-center {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+body {
+	background-image: url("http://wallpapercave.com/wp/ctpbgJA.jpg");
+	background-position:center bottom;
+	background-size:cover;
+	background-repeat:no-repeat;
+	min-height:100vh;
+}
+
+.transparent-modal {
+	background:transparent;
+	box-shadow:none;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:100%;
+}
+
+.super {
+	vertical-align:super;
+	font-size:16px;
+}
