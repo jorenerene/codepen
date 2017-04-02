@@ -1,0 +1,366 @@
+<!DOCTYPE html><html class="pen"><head>
+<meta charset='UTF-8'><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet prefetch' href='http://bootswatch.com/cosmo/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+<title>Bunny by Canvas, CSS, or SVG?</title>
+
+<style>
+/*
+https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
+
+http://stackoverflow.com/questions/8936803/rotating-around-an-arbitrary-point-html5-canvas
+To rotate around a point you need to do 3 steps:
+First translate the context to the center you wish to rotate around.
+Then do the actual rotation.
+Then translate the context back.
+
+http://stackoverflow.com/questions/2172798/how-to-draw-an-oval-in-html5-canvas
+
+https://css-tricks.com/transforms-on-svg-elements/
+
+Background - http://wallpapercave.com/cartoon-background
+*/
+
+.mtb-vh {
+	margin:20vh 0 10vh;
+	font-family:"Fredoka One";
+	color:white;
+}
+
+.pen hr {
+	border-width:4px;
+	border-color:white;
+}
+
+.mtb-vh a:hover, .mtb-vh a:focus {
+	text-decoration:none;
+}
+
+.mtb-vh a {
+	color:pink;
+	border-bottom:3px solid pink;
+	font-size:20px;
+	letter-spacing:1px;
+}
+
+a {
+	cursor:pointer;
+}
+
+.pen body {
+	overflow-x:hidden;
+}
+
+#canvas-rabbit, #css-rabbit, #svg-rabbit {
+	width:300px;
+	height:300px;
+}
+
+#css-rabbit {
+	position:relative;
+}
+
+.css-rabbit-head {
+	width:100px;
+	height:100px;
+	position:absolute;
+	border-radius:50%;
+	background-color:white;
+	top:100px;
+	left:100px;
+}
+
+.css-rabbit-eyes:after {
+	content:"";
+	width:5px;
+	height:10px;
+	position:absolute;
+	border-radius:50%;
+	background-color:black;
+	top:30px;
+	left:30px;
+}
+
+.css-rabbit-eyes:before {
+	content:"";
+	width:5px;
+	height:10px;
+	position:absolute;
+	border-radius:50%;
+	background-color:black;
+	top:30px;
+	left:65px;
+}
+
+.css-rabbit-ears:after {
+	content:"";
+	width:40px;
+	height:100px;
+	position:absolute;
+	border-radius:50%;
+	background-color:lightpink;
+	top:-80px;
+	left:10px;
+	border:solid 10px white;
+	transform-origin:bottom center;
+	transform:rotateZ(-20deg);
+	z-index:-1;
+}
+
+.css-rabbit-ears:before {
+	content:"";
+	width:40px;
+	height:100px;
+	position:absolute;
+	border-radius:50%;
+	background-color:lightpink;
+	top:-80px;
+	left:50px;
+	border:solid 10px white;
+	transform-origin:bottom center;
+	transform:rotateZ(20deg);
+	z-index:-1;
+}
+
+.css-rabbit-nose {
+	width:20px;
+	height:10px;
+	position:absolute;
+	border-radius:50%;
+	background-color:pink;
+	top:60px;
+	left:40px;
+	
+	/* border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 32px;
+    border-bottom-left-radius: 32px; */
+}
+
+.flex-center {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+body {
+	background-image: url("http://wallpapercave.com/wp/ctpbgJA.jpg");
+	background-position:center bottom;
+	background-size:cover;
+	background-repeat:no-repeat;
+	min-height:100vh;
+}
+
+.transparent-modal {
+	background:transparent;
+	box-shadow:none;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:100%;
+}
+
+.super {
+	vertical-align:super;
+	font-size:16px;
+}
+</style>
+</head><body>
+
+<img class="img-responsive hide" src="https://68.media.tumblr.com/9baa8321fae60c4db51205cce602fab4/tumblr_ok2yxhAaZg1qjqi9so1_400.gif">
+
+<!-- Modal -->
+<div class="modal fade" id="modal-why" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content transparent-modal">
+<div class="modal-body">
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Reviewing the <a href="https://twitter.com/CodePen">@codepen</a> timeline suggests I code css animals, svg transitions, or canvas animations; and post after noon EST for RT maybe...</p>&mdash; Jorene René (@jorenerene) <a href="https://twitter.com/jorenerene/status/822196771891908608">January 19, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+<h1 class="text-center mtb-vh">Bunny by Canvas <i class="super fa fa-html5"></i>, CSS <i class="super fa fa-css3"></i>, or SVG <i class="super fa fa-code-fork"></i>? <small class="text-uppercase super"><a data-toggle="modal" data-target="#modal-why">Why?</a></small></h1>
+<p class="hide lead">To be fair, please avoid inspecting any elements</p>
+<div class="row">
+<div class="col-sm-4">
+<div id="css-rabbit" class="center-block">
+<div class="css-rabbit-head">
+<div class="css-rabbit-eyes"></div>
+<div class="css-rabbit-nose"></div>
+<div class="css-rabbit-ears"></div>
+</div>
+</div>
+
+<div class="btn-group btn-group-justified" role="group">
+<a class="btn btn-warning" data-toggle="tooltip" title="HTML5 Canvas API?!" data-content="Nope. What are you looking at?"><i class="fa fa-html5"></i></a>
+<a class="btn btn-primary" data-toggle="tooltip" title="CSS 3 Elements?!" data-content="Yup! You've got the Eye of the Tiger!"><i class="fa fa-css3"></i></a>
+<a class="btn btn-danger" data-toggle="tooltip" title="Inline SVG?!" data-content="No. Need glasses?"><i class="fa fa-code-fork"></i></a>
+</div>
+<hr class="visible-xs">
+
+</div><div class="col-sm-4">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" id="svg-rabbit" class="center-block">
+<!-- EARS -->
+<g transform="rotate(-20 130 130)">
+<!-- <g style="transform-origin:bottom;transform:rotateZ(-20deg);"> -->
+<ellipse cx="130" cy="75" rx="20" ry="50" fill="white"></ellipse>
+<ellipse cx="130" cy="75" rx="12" ry="36" fill="lightpink"></ellipse>
+</g>
+
+<g transform="rotate(20 170 130)">
+<!-- <g style="transform-origin:bottom;transform:rotateZ(20deg);"> -->
+<ellipse cx="170" cy="75" rx="20" ry="50" fill="white"></ellipse>
+<ellipse cx="170" cy="75" rx="12" ry="36" fill="lightpink"></ellipse>
+</g>
+
+<!-- HEAD -->
+<circle cx="150" cy="150" r="50" fill="white"></circle>
+
+<!-- EYES -->
+<ellipse cx="130" cy="135" rx="2.5" ry="5" fill="black"></ellipse>
+<ellipse cx="170" cy="135" rx="2.5" ry="5" fill="black"></ellipse>
+
+<!-- NOSE -->
+<ellipse cx="150" cy="160" rx="10" ry="5" fill="pink"></ellipse>
+</svg>
+
+<div class="btn-group btn-group-justified" role="group">
+<a class="btn btn-warning" data-toggle="tooltip" title="HTML5 Canvas API?!" data-content="Negative. Do you even see a rabbit?"><i class="fa fa-html5"></i></a>
+<a class="btn btn-primary" data-toggle="tooltip" title="CSS 3 Elements?!" data-content="You wish. Maybe your screen has a severe glare?"><i class="fa fa-css3"></i></a>
+<a class="btn btn-danger" data-toggle="tooltip" title="Inline SVG?!" data-content="Yeah! Real recognize real!"><i class="fa fa-code-fork"></i></a>
+</div>
+<hr class="visible-xs">
+
+</div><div class="col-sm-4">
+
+<canvas class="center-block" id="canvas-rabbit" width="300" height="300"></canvas>
+
+<div class="btn-group btn-group-justified" role="group">
+<a class="btn btn-warning" data-toggle="tooltip" title="HTML5 Canvas API?!" data-content="Definitely! You're a natural at whatever this is!"><i class="fa fa-html5"></i></a>
+<a class="btn btn-primary" data-toggle="tooltip" title="CSS 3 Elements?!" data-content="Incorrect. There are more options."><i class="fa fa-css3"></i></a>
+<a class="btn btn-danger" data-toggle="tooltip" title="Inline SVG?!" data-content="Wrong. Obviously."><i class="fa fa-code-fork"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+<script>
+$ (window).ready (function () {
+	$ ("[data-toggle=tooltip]").tooltip ({
+		"container": "body",
+		"trigger": "hover"
+	});
+	
+	$ ("[data-toggle=tooltip]").click (function () {
+		$ (this).tooltip ("hide");
+		$ (this).popover ("show");
+	});
+	
+	$ ("[data-toggle=tooltip]").hover (function () {}, function () {
+		$ (this).popover ("hide");
+	});
+	
+	$ ("[data-toggle=tooltip]").popover ({
+		"trigger": "click",
+		"container": "body",
+		"placement": "auto"
+	});
+	
+function ellipse (context, cx, cy, rx, ry) {
+	context.translate (cx - rx, cy - ry);
+	context.scale (rx, ry);
+	context.arc (1, 1, 1, 0, 2 * Math.PI, false);
+}
+	
+function draw() {
+	var canvas = document.getElementById ('canvas-rabbit');
+	
+	if (canvas.getContext) {
+		var ctx = canvas.getContext ('2d');
+
+		ctx.fillStyle = "white";
+		ctx.save (); // save state
+		ctx.beginPath();
+		ctx.translate (130, 130);
+		ctx.rotate (-20 * Math.PI / 180);
+		ctx.translate (-130, -130);
+		ellipse (ctx, 130, 75, 20, 50); // Left Ear
+		ctx.restore (); // restore to original state
+		ctx.fill ();
+
+		ctx.fillStyle = "pink";
+		ctx.save (); // save state
+		ctx.beginPath();
+		ctx.translate (130, 130);
+		ctx.rotate (-20 * Math.PI / 180);
+		ctx.translate (-130, -130);
+		ellipse (ctx, 130, 75, 12, 36); // Inside Left Ear
+		ctx.restore (); // restore to original state
+		ctx.fill ();
+
+		ctx.fillStyle = "white";
+		ctx.save (); // save state
+		ctx.beginPath();
+		ctx.translate (170, 130);
+		ctx.rotate (20 * Math.PI / 180);
+		ctx.translate (-170, -130);
+		ellipse (ctx, 170, 75, 20, 50); // Right Ear
+		ctx.restore (); // restore to original state
+		ctx.fill ();
+
+		ctx.fillStyle = "pink";
+		ctx.save (); // save state
+		ctx.beginPath();
+		ctx.translate (170, 130);
+		ctx.rotate (20 * Math.PI / 180);
+		ctx.translate (-170, -130);
+		ellipse (ctx, 170, 75, 12, 36); // Inside Right Ear
+		ctx.restore (); // restore to original state
+		ctx.fill ();
+
+		ctx.beginPath ();
+		ctx.arc (150, 150, 50, 0, Math.PI * 2, true); // Outer circle
+		ctx.fillStyle = "white";
+		ctx.fill ();
+
+		ctx.save (); // save state
+		ctx.beginPath();
+		ellipse (ctx, 130, 135, 2.5, 5);
+		ctx.restore (); // restore to original state
+		ctx.fillStyle = "black";
+		ctx.fill ();
+
+		// ctx.beginPath ();
+		// ctx.arc (170, 135, 5, 0, Math.PI * 2, true);  // Right eye
+		ctx.save (); // save state
+		ctx.beginPath();
+		ellipse (ctx, 170, 135, 2.5, 5);
+		ctx.restore (); // restore to original state
+		ctx.fill ();
+
+		ctx.fillStyle = "pink";
+		ctx.save (); // save state
+		ctx.beginPath();
+		ellipse (ctx, 150, 160, 10, 5); // Nose
+		ctx.restore (); // restore to original state
+		ctx.fill ();
+	}
+}
+
+draw ();
+});
+</script>
+
+</body></html>
