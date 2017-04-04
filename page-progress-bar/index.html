@@ -1,0 +1,88 @@
+<!DOCTYPE html><html class="pen"><head>
+<title>Page Progress Bar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://bootswatch.com/paper/bootstrap.min.css">
+<link rel="stylesheet prefetch" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+/* Article Progress */
+
+body {
+	min-height:300vh;
+}
+
+nav .progress {
+	margin-bottom:0;
+}
+
+.progress-bar {
+	width:0%;
+}
+
+.progress-bar, .progress-bar-danger, .progress-bar-success, .progress-bar-danger:last-child.progress-bar:before, .progress-bar-success:last-child.progress-bar:before {
+	transition: background-color 0.5s;
+}
+</style>
+</head><body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#top">Page Progress</a>
+</div>
+
+<div class="collapse navbar-collapse" id="collapse">
+
+</div><!-- .navbar-collapse -->
+</div><!-- .container -->
+
+<div class="progress">
+<div class="progress-bar progress-bar-danger" role="progressbar"></div>
+</div>
+
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+/* Article Progress */
+
+$ (window).resize (function () {
+	var windows_top = $ (window).scrollTop ();
+	var document_height = $ (document).height ();
+	var window_height = $ (window).height ();
+
+	var scrolled = (windows_top / (document_height - window_height)) * 100;
+	
+	if (scrolled < 50) $ (".progress-bar").removeClass ("progress-bar-success progress-bar-striped active").addClass ("progress-bar-danger");
+	else $ (".progress-bar").removeClass ("progress-bar-danger progress-bar-striped active").addClass ("progress-bar-success");
+	
+	if (scrolled == 100) $ (".progress-bar").addClass ("progress-bar-striped active");
+
+	$ (".progress-bar").css ("width", (scrolled + "%"));
+});
+
+$ (window).scroll (function () {
+	var windows_top = $ (window).scrollTop ();
+	var document_height = $ (document).height ();
+	var window_height = $ (window).height ();
+
+	var scrolled = (windows_top / (document_height - window_height)) * 100;
+
+	if (scrolled < 50) $ (".progress-bar").removeClass ("progress-bar-success progress-bar-striped active").addClass ("progress-bar-danger");
+	else $ (".progress-bar").removeClass ("progress-bar-danger progress-bar-striped active").addClass ("progress-bar-success");
+	
+	if (scrolled == 100) $ (".progress-bar").addClass ("progress-bar-striped active");
+
+	$ (".progress-bar").css ("width", (scrolled + "%"));
+});
+</script>
+
+</body></html>
