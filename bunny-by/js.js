@@ -16,7 +16,8 @@ $ (window).ready (function () {
 	$ ("[data-toggle=tooltip]").popover ({
 		"trigger": "click",
 		"container": "body",
-		"placement": "auto"
+		"placement": "auto",
+		"html": true
 	});
 	
 function ellipse (context, cx, cy, rx, ry) {
