@@ -1,0 +1,17 @@
+/* Article Progress */
+
+body {
+	min-height:300vh;
+}
+
+nav .progress {
+	margin-bottom:0;
+}
+
+.progress-bar {
+	width:0%;
+}
+
+.progress-bar, .progress-bar-danger, .progress-bar-success, .progress-bar-danger:last-child.progress-bar:before, .progress-bar-success:last-child.progress-bar:before {
+	transition: background-color 0.5s;
+}
