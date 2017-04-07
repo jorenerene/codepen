@@ -6,12 +6,68 @@
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 
 <style>
+#popular.dropdown.open>a, #popular.dropdown.open>a:hover, #popular.dropdown.open>a:focus {
+	background-color: #2db7ff;
+	color: #fff;
+}
+
+#popular.dropdown.open .media a {
+	color: #2db7ff;
+}
+
+#topics.dropdown.open>a, #topics.dropdown.open>a:hover, #topics.dropdown.open>a:focus {
+	background-color: #64d976;
+	color: #fff;
+}
+
+#topics.dropdown.open .media a {
+	color: #64d976;
+}
+
+#boards.dropdown.open>a, #boards.dropdown.open>a:hover, #boards.dropdown.open>a:focus {
+	background-color: #ff4a41;
+	color: #fff;
+}
+
+#boards.dropdown.open .media a, #boards.dropdown.open .media .fa {
+	color: #ff4a41;
+}
+
+.dropdown-menu .media-heading {
+	margin-top:4px;
+}
 .pen body {
 	padding-top:70px;
 }
 
 a {
 	cursor:pointer;
+}
+
+.dropdown-menu .media {
+	padding: 3px 20px;
+}
+
+@media (min-width: 767px) {
+	.navbar-nav .open .dropdown-menu .media {
+		width:50vw;
+	}
+}
+
+@media (max-width: 767px) {
+	.navbar-nav .open .dropdown-menu .media {
+		padding: 5px 15px 5px 25px;
+	}
+}
+
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+	max-height:none;
+}
+
+.fa-label {
+	font-size: 12px;
+	font-weight: bold;
+	vertical-align: top;
 }
 </style>
 </head><body>
@@ -26,7 +82,7 @@ a {
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="navbar-brand" data-toggle="popover" data-placement="right" title="Brand" data-content="<div class='center-block btn-group-vertical' role='group'><a class='btn btn-primary'><i class='fa fa-home'></i></a><a href='https://twitter.com/jorenerene' target='_blank' class='btn btn-primary'><i class='fa fa-twitter'></i></a><a href='https://twitter.com/joenerene' target='_blank' class='btn btn-primary'><i class='fa fa-facebook'></i></a><a href='https://twitter.com/joenerene' target='_blank' class='btn btn-primary'><i class='fa fa-instagram'></i></a></div>">
+<a class="navbar-brand" data-toggle="popover" data-placement="bottom" data-content="<div class='center-block btn-group-vertical' role='group'><a class='btn btn-primary'><i class='fa fa-home'></i></a><a href='https://twitter.com/jorenerene' target='_blank' class='btn btn-primary'><i class='fa fa-twitter'></i></a><a href='https://twitter.com/joenerene' target='_blank' class='btn btn-primary'><i class='fa fa-facebook'></i></a><a href='https://twitter.com/joenerene' target='_blank' class='btn btn-primary'><i class='fa fa-instagram'></i></a></div>">
 <img alt="Brand" height="20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAB+0lEQVR4AcyYg5LkUBhG+1X2PdZGaW3btm3btm3bHttWrPomd1r/2Jn/VJ02TpxcH4CQ/dsuazWgzbIdrm9dZVd4pBz4zx2igTaFHrhvjneVXNHCSqIlFEjiwMyyyOBilRgGSqLNF1jnwNQdIvAt48C3IlBmHCiLQHC2zoHDu6zG1iXn6+y62ScxY9AODO6w0pvAqf23oSE4joOfH6OxfMoRnoGUm+de8wykbFt6wZtA07QwtNOqKh3ZbS3Wzz2F+1c/QJY0UCJ/J3kXWJfv7VhxCRRV1jGw7XI+gcO7rEFFRvdYxydwcPsVsC0bQdKScngt4iUTD4Fy/8p7PoHzRu1DclwmgmiqgUXjD3oTKHbAt869qdJ7l98jNTEblPTkXMwetpvnftA0LLHb4X8kiY9Kx6Q+W7wJtG0HR7fdrtYz+x7iya0vkEtUULIzCjC21wY+W/GYXusRH5kGytWTLxgEEhePPwhKYb7EK3BQuxWwTBuUkd3X8goUn6fMHLyTT+DCsQdAEXNzSMeVPAJHdF2DmH8poCREp3uwm7HsGq9J9q69iuunX6EgrwQVObjpBt8z6rdPfvE8kiiyhsvHnomrQx6BxYUyYiNS8f75H1w4/ISepDZLoDhNJ9cdNUquhRsv+6EP9oNH7Iff2A9g8h8CLt1gH0Qf9NMQAFnO60BJFQe0AAAAAElFTkSuQmCC" width="20">
 </a>
 </div>
@@ -35,92 +91,127 @@ a {
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 <ul class="nav navbar-nav navbar-right">
-<li class="dropdown">
-<a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Popular &nbsp; <span class="fa fa-caret-square-o-down"></span></a>
+<li class="dropdown" id="popular">
+<a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Popular</a>
 <ul class="dropdown-menu">
-
-<li><a>
 
 <div class="media">
 <div class="media-left h3">1.</div>
 <div class="media-body">
-<h4 class="media-heading">Cinematic Techniques That Have Become Popular in the Modern Age of Filmmaking</h4>
+<h4 class="media-heading"><a>Cinematic Techniques That Have Become Popular in the Modern Age of Filmmaking</a></h4>
 <p class="text-muted">+7,027 VIEWS</p>
 </div>
 </div>
 
-</a></li>
-
 <li role="separator" class="divider"></li>
-
-<li><a>
 
 <div class="media">
 <div class="media-left h3">2.</div>
 <div class="media-body">
-<h4 class="media-heading">Watch: This Time-Lapse Boldly Goes Where No Time-Lapse Has Gone Before</h4>
+<h4 class="media-heading"><a>Watch: This Time-Lapse Boldly Goes Where No Time-Lapse Has Gone Before</a></h4>
 <p class="text-muted">+5,237 VIEWS</p>
 </div>
 </div>
 
-</a></li>
-
 <li role="separator" class="divider"></li>
-
-<li><a>
 
 <div class="media">
 <div class="media-left h3">3.</div>
 <div class="media-body">
-<h4 class="media-heading">In Light of GH5, Atomos Adds 4K 60p Ninja Inferno and Slashes Prices</h4>
+<h4 class="media-heading"><a>In Light of GH5, Atomos Adds 4K 60p Ninja Inferno and Slashes Prices</a></h4>
 <p class="text-muted">+6,344 VIEWS</p>
 </div>
 </div>
 
-</a></li>
-
 <li role="separator" class="divider"></li>
-
-<li><a>
 
 <div class="media">
 <div class="media-left h3">4.</div>
 <div class="media-body">
-<h4 class="media-heading">Watch: How Hayao Miyazaki Blends Physical and Metaphysical Space in His Films</h4>
+<h4 class="media-heading"><a>Watch: How Hayao Miyazaki Blends Physical and Metaphysical Space in His Films</a></h4>
 <p class="text-muted">+3,121 VIEWS</p>
 </div>
 </div>
 
-</a></li>
-
 </ul>
 </li>
 
-<li class="dropdown">
-<a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics  &nbsp; <span class="fa fa-caret-square-o-down"></span></a>
+<li class="dropdown" id="topics">
+<a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics </a>
 <ul class="dropdown-menu">
-<li>
+<div class="media">
 <h6 class="small text-uppercase text-muted">Newest in <a>Screenwriting</a></h6>
 <h4><a>Watch: Creating the Perfect Blend of Suffering, Sorrow, and Humor for a Tragicomedy</a></h4>
-</li>
+</div>
 
-<li><a href="#">Another action</a></li>
-<li><a href="#">Something else here</a></li>
 <li role="separator" class="divider"></li>
-<li><a href="#">Separated link</a></li>
+
+<div class="media">
+<h6 class="small text-uppercase text-muted">Newest in <a>Directing</a></h6>
+<h4><a>Completely Re-Designed Director's Monitor Cage v2 Available for Pre-Order</a></h4>
+</div>
+
+<li role="separator" class="divider"></li>
+
+<div class="media">
+<h6 class="small text-uppercase text-muted">Newest in <a>Screenwriting</a></h6>
+<h4><a>Steve Martin’s Comedy Masterclass: 'When the Word F*ck Gets the Laughs, Question It'</a></h4>
+</div>
+
+<li role="separator" class="divider"></li>
+
+<div class="media">
+<h6 class="small text-uppercase text-muted">Newest in <a>Distribution & Marketing</a></h6>
+<h4><a>5 Ways to Survive Making a Film with Your Best Friend</a></h4>
+</div>
+
 </ul>
 </li>
 
-<li class="dropdown">
-<a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boards  &nbsp; <span class="fa fa-caret-square-o-down"></span></a>
+<li class="dropdown" id="boards">
+<a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boards </a>
 <ul class="dropdown-menu">
 
-<li><a><i class="fa fa-comment-o"></i> &nbsp; Ika-6 na Utos Gma network show</a></li>
+<div class="media">
+<div class="media-left">
+<span class="text-center fa-stack fa-lg">
+<i class="fa fa-comment-o fa-stack-2x"></i>
+<span class="fa-label">30</span>
+</span>
+</div>
+<div class="media-body">
+<h4 class="media-heading"><a>Using a tele-prompt to help non-actors keep focussed on looking straight at the camera.</a></h4>
+</div>
+</div>
 
-<li><a href="#">Another action</a></li>
-<li><a href="#">Something else here</a></li>
 <li role="separator" class="divider"></li>
-<li><a href="#">Separated link</a></li>
+
+<div class="media">
+<div class="media-left">
+<span class="text-center fa-stack fa-lg">
+<i class="fa fa-comment-o fa-stack-2x"></i>
+<span class="fa-label">12</span>
+</span>
+</div>
+<div class="media-body">
+<h4 class="media-heading"><a>How to shoot a City scene in mirror?</a></h4>
+</div>
+</div>
+
+<li role="separator" class="divider"></li>
+
+<div class="media">
+<div class="media-left">
+<span class="text-center fa-stack fa-lg">
+<i class="fa fa-comment-o fa-stack-2x"></i>
+<span class="fa-label">9</span>
+</span>
+</div>
+<div class="media-body">
+<h4 class="media-heading"><a>A6000 vs A5000 for entry to video</a></h4>
+</div>
+</div>
+
 </ul>
 </li>
 
@@ -145,7 +236,7 @@ a {
 <main class="container">
 <div class="page-header">
 <h1>Navbar Search Brand</h1>
-<p class="lead">Based on the <a href="http://nofilmschool.com/" target="_blank">No Film School</a> navbar which prioritizes search while maintaining the brand name and menu items.</p>
+<p class="lead">Based on the <a href="http://nofilmschool.com/" target="_blank">No Film School</a> navbar which prioritizes search while maintaining the brand name and highlighting dropdown menu items.</p>
 </div>
 
 <img class="img-responsive" src="https://68.media.tumblr.com/f656d6fa151ac7ae8bb7e9399ec5db00/tumblr_onfnbi0Miv1qjqi9so1_1280.png">
@@ -162,6 +253,16 @@ $ (window).ready (function () {
 	});
 	
 	$ ('[data-toggle="tooltip"]').tooltip ();
+	
+	$ ("ul.nav .dropdown").hover (function () {
+		if ($ (".navbar-toggle").css ("display") == "block") return true;
+		
+		$ (this).addClass ("open");
+	}, function() {
+		if ($ (".navbar-toggle").css ("display") == "block") return true;
+		
+		$ (this).removeClass ("open");
+	});
 });
 </script>
 
