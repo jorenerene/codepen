@@ -1,0 +1,63 @@
+#popular.dropdown.open>a, #popular.dropdown.open>a:hover, #popular.dropdown.open>a:focus {
+	background-color: #2db7ff;
+	color: #fff;
+}
+
+#popular.dropdown.open .media a {
+	color: #2db7ff;
+}
+
+#topics.dropdown.open>a, #topics.dropdown.open>a:hover, #topics.dropdown.open>a:focus {
+	background-color: #64d976;
+	color: #fff;
+}
+
+#topics.dropdown.open .media a {
+	color: #64d976;
+}
+
+#boards.dropdown.open>a, #boards.dropdown.open>a:hover, #boards.dropdown.open>a:focus {
+	background-color: #ff4a41;
+	color: #fff;
+}
+
+#boards.dropdown.open .media a, #boards.dropdown.open .media .fa {
+	color: #ff4a41;
+}
+
+.dropdown-menu .media-heading {
+	margin-top:4px;
+}
+.pen body {
+	padding-top:70px;
+}
+
+a {
+	cursor:pointer;
+}
+
+.dropdown-menu .media {
+	padding: 3px 20px;
+}
+
+@media (min-width: 767px) {
+	.navbar-nav .open .dropdown-menu .media {
+		width:50vw;
+	}
+}
+
+@media (max-width: 767px) {
+	.navbar-nav .open .dropdown-menu .media {
+		padding: 5px 15px 5px 25px;
+	}
+}
+
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+	max-height:none;
+}
+
+.fa-label {
+	font-size: 12px;
+	font-weight: bold;
+	vertical-align: top;
+}
