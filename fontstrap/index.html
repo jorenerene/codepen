@@ -1,0 +1,265 @@
+<!DOCTYPE html><html class="pen"><head>
+<title>Fontstrap | Preview Google Font Pairs with CSS Rules | Prosper Agency</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://bootswatch.com/paper/bootstrap.min.css">
+<link rel="stylesheet prefetch" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Bootstrap Slider -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.4.1/css/bootstrap-slider.min.css">
+
+<!-- Bootstrap Select -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+
+<style>
+.pen body {
+	padding-top:70px;
+}
+</style>
+
+</head><body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#top">Fontstrap</a>
+
+<button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#font-form"><span class="fa fa-fw fa-font"></span> Fonts</button>
+</div>
+</div><!-- .container -->
+</nav>
+
+<header class="container">
+<div class="row">
+<div class="col-sm-8">
+
+<div class="page-header">
+<h1>Roadmap</h1>
+</div>
+
+<ol>
+<li><s>Add modal form with font variables fields: Font Family, Style, Size, Class Pairing, CSS</s></li>
+<li><s>Setup example copy</s></li>
+<li><s><a href="https://developers.google.com/fonts/docs/developer_api#acquiring_and_using_an_api_key" target="_blank">Acquire Google Font API Key</a></s></li>
+<li><s>Populate font form family and styles with Google Fonts WebFont Loader</s></li>
+<li><s>Dynamically update css selectors' fonts</s></li>
+<li>Generate CSS code based on font form</li>
+<li>Set multiple CSS font rules</li>
+<li>Maintain undo history</li>
+<li>Shareable CSS font rules</li>
+<li>Use iFrame to preview live pages</li>
+<li>Create accompanying Google Chrome Extension to edit external pages</li>
+</ol>
+
+<p>Wasted time working on the following peripheral functions:</p>
+
+<ul>
+<li><s>Zoom in image on hover</s></li>
+<li><s>Scroll progress bar attached to the navbar</s></li>
+</ul>
+
+<div class="page-header">
+<h1>Resources</h1>
+</div>
+
+<ul>
+<li><a href="https://getbootstrap.com" target="_blank">Bootstrap</a></li>
+<li><a href="http://bootswatch.com/paper/" target="_blank">Bootswatch Paper</a></li>
+<li><a href="https://github.com/typekit/webfontloader#google" target="_blank">WebFont</a></li>
+<li><a href="https://github.com/seiyria/bootstrap-slider" target="_blank">Bootstrap Slider</a></li>
+<li><a href="https://silviomoreto.github.io/bootstrap-select/" target="_blank">Bootstrap Select</a></li>
+</ul>
+
+</div>
+<div class="col-sm-4">
+
+<hr class="visible-xs">
+
+<h1>Heading 1 <small>small</small></h1>
+
+<div class="panel panel-default">
+<div class="img-zoom"><img src="https://unsplash.it/g/400/200/?random" class="img-responsive"></div>
+<div class="panel-footer small">.small.panel-footer</div>
+</div>
+
+<p class="lead">This lead paragraph uses the .lead class.</p>
+<p>This is a paragraph. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+<blockquote><p>It is a long established fact that a reader will be distracted by readable content.</p></blockquote>
+<table class="table table-hover table-condensed table-bordered">
+ <thead><tr>
+<th>Table Heading One</th>
+<th>Table Heading Two</th>
+</tr></thead>
+<tbody><tr>
+<td>Table Cell One</td>
+<td>Table Cell Two</td>
+</tr></tbody>
+</table>
+
+<div class="form-group hide">
+<label>This is an Input Label</label>
+<button type="button" class="btn btn-default btn-block">This button uses the .btn class</button>
+<span class="help-block small">This help block uses the .help-block class</span>
+</div>
+
+</div>
+</div>
+
+</header>
+
+<!-- Modal -->
+<div class="modal fade left" id="font-form" tabindex="-1" role="dialog">
+<div class="modal-dialog modal-sm" role="document">
+<div class="modal-content">
+<div class="modal-header bg-info">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title"><span class="fa fa-fw fa-font"></span> Fonts</h4>
+</div>
+<div class="modal-body">
+
+<form>
+<div class="form-group">
+<label for="font-family">Font Family</label>
+<select id="font-family" class="selectpicker form-control font-load"></select>
+</div>
+
+<div class="form-group">
+<label for="font-style">Font Style</label>
+<select class="selectpicker form-control font-load" id="font-style"></select>
+</div>
+
+<div class="form-group">
+<label for="font-size">Font Size</label>
+<p><input id="font-size" class="font-value" data-slider-id='font-size' type="text" data-slider-min="8" data-slider-max="32" data-slider-step="1" data-slider-value="16"></p>
+</div>
+
+<div class="form-group">
+<label for="font-selectors">CSS Selectors</label>
+<input type="text" id="font-selectors" class="font-value form-control">
+<span class="help-block small">h1, .class, #id { ... }</span>
+</div>
+</form>
+
+<hr>
+
+<div class="form-group">
+<button class="btn btn-success btn-block">CSS <span class="fa fa-fw fa-css3"></span> Code</button>
+</div>
+
+<div class="hide">
+<hr>
+<code id="font-css"></code>
+</div>
+
+</div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap Slider -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.4.1/bootstrap-slider.min.js"></script>
+
+<!-- Bootstrap Select -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
+
+<!-- WebFont -->
+<script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+
+<script type="text/javascript">
+$ ("#font-size").slider({
+	tooltip: "always",
+	formatter: function(value) {
+		return value + "px";
+	}
+});
+
+$ ("#font-size").on ("slide", function (e) {
+	// $ ("#value").text (e.value);
+});
+
+$.getJSON ("https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCJQllfCsU4TQDNQ19GifRDV_HNyWD07fk", function (data) {
+	console.log (data);
+	
+	fonts = data.items;
+	
+	for (f in fonts) {
+		$ ("#font-family").append ( $ ("<option>", {
+			text: fonts [f].family,
+			value: f
+		}));
+	}
+	
+	for (v in fonts [0].variants) {
+		$ ("#font-style").append ( $ ("<option>", {
+			text: fonts [0].variants [v],
+			value: fonts [0].variants [v]
+		}));
+	}
+	
+	$ (".selectpicker").selectpicker ("refresh");
+});
+
+$ ("#font-family").change (function () {
+	$ ("#font-style").html ("");
+	
+	var selected = $ (this).val ();
+	
+	for (v in fonts [selected].variants) {
+		$ ("#font-style").append ( $ ("<option>", {
+			text: fonts [selected].variants [v],
+			value: fonts [selected].variants [v]
+		}));
+	}
+	
+	$ ('.selectpicker').selectpicker ('refresh');
+});
+
+function update_fonts () {
+	var selectors = $ ("#font-selectors").val ();
+	
+	var family = $ ("#font-family").val ();
+	family = fonts [family].family;
+
+	$ (selectors).css ("font-family", family);
+	
+	var style = $ ("#font-style").val ();
+	
+	var styles = style.match (/[a-zA-Z]+|[0-9]+/g);
+	
+	if (style.indexOf ("italic") != -1) $ (selectors).css ("font-style", "italic");
+	if (style.indexOf ("bold") != -1) $ (selectors).css ("font-weight", "bold");
+}
+
+$ (".font-load").change (function () {
+	var family = $ ("#font-family").val ();
+	family = fonts [family].family;
+	
+	if ($ ("#font-style").val () != "regular") family += ":" + $ ("#font-style").val ();
+	
+	WebFont.load ({
+		google: {
+			families: [family]
+		}
+	});
+
+	update_fonts ();
+});
+
+$ (".selectpicker").selectpicker ({
+	style: "btn-default",
+	size: "auto",
+	template: {
+		caret: '<span class="fa fa-fw fa-angle-down"></span>'
+	}
+});
+</script>
+
+</body></html>
