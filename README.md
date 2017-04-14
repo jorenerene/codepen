@@ -15,6 +15,7 @@ The following projects have been published:
 
 The following projects are scheduled for completion:
 
+* Duel Tube
 * Over The Top
 * Bunny by Canvas, CSS, or SVG
 * Project Placeholder
